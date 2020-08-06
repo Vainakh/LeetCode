@@ -18,3 +18,6 @@ let plusOne = function(digits) {
 
 let digits = [4, 3, 2, 1];
 console.log(plusOne(digits));
+
+
+let digits = []
