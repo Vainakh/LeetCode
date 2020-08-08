@@ -23,7 +23,7 @@ var shuffle = function(nums, n) {
   let shuffled = [];
   
   for (let i = 0; i < nums.length; i += 1) {
-      for (let j = i + n; j < nums.length; j += 1) {
+      for (let j = i + n; j < nums.length; j += n) {
         
           shuffled.push(nums[i], nums[j])
       }
@@ -34,3 +34,8 @@ var shuffle = function(nums, n) {
 let nums1 = [1,1,2,2]
 let n1 = 2
 console.log(shuffle(nums1, n1));//[1,2,1,2]
+
+
+// let nums = [1,2,3,4,4,3,2,1];
+// let n = 4;
+// console.log(shuffle(nums, n));//[1,4,2,3,3,2,4,1]
