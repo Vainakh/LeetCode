@@ -37,8 +37,7 @@
 function alternatingSort(array){
   // Sort the source array
   let arr = array.sort((a, b) => a - b);
-  console.log(arr);
-
+  
   // This will be the final result
   let result = [];
 
@@ -59,6 +58,7 @@ function alternatingSort(array){
   second--;
 
 }
+return result;
 }
 
 let array = [1, 3, 5, 6, 4, 2];

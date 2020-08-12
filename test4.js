@@ -58,3 +58,5 @@
 // [output] integer64
 
 // The sum of the results for all get queries.
+
+console.log( 1 == "1");
