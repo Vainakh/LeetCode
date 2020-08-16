@@ -25,26 +25,34 @@
 // [JavaScript] Syntax Tips
 
 function makeArrayConsecutive2(statues) {
-  let min = Math.min(statues);
-  let max = Math.max(statues);
+  let min = Math.min(...statues);
+  let max = Math.max(...statues);
+  let range = [];
+  let newArray = [];
   let count = 0;
-  i = min;
-  while(i < max){
-      if(!statues.includes(i)){
-          count += 1
-      }
+
+  for (let i = min; i <= max; i += 1){
+    range.push(i);
   }
+
+  for(let num in range){
+    if(!statues.includes(range[num])){
+      count += 1;
+    }else{
+      continue;
+    }
+  }
+
   return count;
 }
 
-
-Input:
-statues: [6, 2, 3, 8]
+//Input:
+// let statues = [6, 2, 3, 8]
 // Expected Output:
 // 3
 
 // Input:
-// statues: [0, 3]
+let statues = [0, 3];
 // Expected Output:
 // 2
 
@@ -62,3 +70,5 @@ statues: [6, 2, 3, 8]
 // statues: [1]
 // Expected Output:
 // 0
+
+console.log(makeArrayConsecutive2(statues))

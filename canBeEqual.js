@@ -53,25 +53,16 @@
 // 1 <= arr[i] <= 1000
 
 var canBeEqual = function(target, arr) {
-let newArray = {};
 
-  for (let i = 0; i < arr.length; i += 1){
-    if(!newArray[arr[i]]){
-      newArray[arr[i]] = 1;
-    }else{
-      newArray[arr[i]] += 1;
-    }
-  }
-  
-  
-    for (let key in newArray){
-      console.log(key)
-      console.log(target)
-      if(newArray[key] > 1 || (!target.includes(key))){
+  for (let i = 0; i < target.length; i += 1){
+    let index = arr.indexOf(target[i], i);
+      if(index === -1 || arr[i] !== target[i]){
         return false;
       }
+
+      arr = [...arr.slice(0, i), ...arr.slice(i, index + 1), ...arr.slice(index + 1, arr.length)];
     }
-  return true;
+    return true;
 };
 
 
@@ -83,8 +74,8 @@ let newArray = {};
 // let arr = [12, 1];
 // //true
 
-let target = [3, 7, 9];
-let arr = [3, 7, 11];
+// let target = [3, 7, 9];
+// let arr = [3, 7, 11];
 // //false
 
 // let target = [1, 1, 1, 1, 1];
@@ -94,5 +85,9 @@ let arr = [3, 7, 11];
 // let target = [1,2,2,3];
 // let arr = [1,1,2,3];
 //false
+
+// let target = [1,2,3,4];
+// let arr = [2,4,1,3];
+//true
 
 console.log(canBeEqual(target, arr));
