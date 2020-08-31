@@ -59,4 +59,9 @@
 
 // The sum of the results for all get queries.
 
-console.log( 1 == "1");
+let array = [1, 4, 2, 7, 5];
+
+let sorted1 = array.sort();
+console.log(sorted1);
+let sorted2 = array.sort((a, b) => (a > b ? -1 : 1));
+console.log(sorted2);
