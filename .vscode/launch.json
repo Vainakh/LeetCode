@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}"
@@ -42,6 +43,11 @@
       "request": "launch",
       "runtimeExecutable": "${execPath}",
       "type": "pwa-extensionHost"
+    },
+    {    "type": "node",
+        "request": "launch",
+        "name": "Launch Places",
+        "program": "${workspaceFolder}/pigLatinify.js"
     }
   ]
 }

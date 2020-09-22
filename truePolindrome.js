@@ -18,28 +18,7 @@
 
 var isPalindrome = function(s) {
   
-  let ascii = "abcdefghijklmnopqrstuvwxyz";
-  let lString = s.toLowerCase();
-  let newString = "";
-  let reversedString = "";
-
- 
-
-  for (let i = 0; i < lString.length; i++){
-    for (let j = 0; j <= ascii.length; j++){
-      if (lString[i].includes(ascii[j])){
-        newString += lString[i];
-      }
-    }
-  }
-
-  for (let k = newString.length - 1; k >= 0; k--){
-    reversedString += newString[k];
-  }
-  console.log(lString);
-  console.log(newString);
-  console.log(reversedString);
-  return (newString === reversedString) ? true : false;
+  
 }
 
 
