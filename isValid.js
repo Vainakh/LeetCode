@@ -72,28 +72,42 @@ let nums5 = "{[]}"
 //   return (pairs.length === 0);
 // };
 
-let isValid = function(nums) {
-  let obj = {
-    '(':')',
-    '[':']',
-    '{':'}'
-  };
+// let isValid = function(nums) {
+//   let obj = {
+//     '(':')',
+//     '[':']',
+//     '{':'}'
+//   };
 
-  let legit = []; 
+//   let legit = []; 
 
-  for (let i=0; i < nums.length; i++) {
-    if (obj[nums[i]]) {
-      legit.push(nums[i]);
-    } else if (nums[i] !== obj[legit.pop()]){
-      return false;
-    } 
-    if (legit.length > nums.length - i) {
-      return false;
+//   for (let i=0; i < nums.length; i++) {
+//     if (obj[nums[i]]) {
+//       legit.push(nums[i]);
+//     } else if (nums[i] !== obj[legit.pop()]){
+//       return false;
+//     } 
+//     if (legit.length > nums.length - i) {
+//       return false;
+//     }
+//   }
+//   return legit.length ? false : true;
+// };
+
+const isValid = (str) => {
+  const result = [];
+  let stringArray = str.split("");
+  for (let i = 0; i < stringArray.length; i++){
+    if (stringArray[i] === "(") {
+      result.push("(");
+    } else {
+      result.pop();
     }
   }
-  return legit.length ? false : true;
-};
+  return result.length === 0;
+}
 
-console.log(isValid(nums));
+let str = "([)]";
+console.log(isValid(str));
 
 
