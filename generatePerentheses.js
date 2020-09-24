@@ -22,7 +22,7 @@
 
 
 
-   function generateParentheses(n){
+   const generateParentheses = (n) => {
     const result = [];
     breathFirstSearch("", 0, 0);
     return result;
