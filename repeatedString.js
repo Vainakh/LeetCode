@@ -46,27 +46,23 @@
 
 
 const repeatedString = (s, n) => {
-
-  let newString = "";
-
-  
-  for (let j = 0; j < n; j ++ ){
-    for (let i = 0; i < s.length; i ++ ){
-        newString += s[i];
-        
-    } 
-  }
-
-  let nLengthString = newString.slice(0, n);
-  let array = nLengthString.split("")
-
-  let as = array.filter(letter => letter === "a")
-  
-  return as.length;
+    let lengthNlength = s.repeat(n);
+    let lengthN = lengthNlength.slice(0, n);
+    
+    let letters = Array.from(lengthN);
+    let count = 0;
+    
+    for (let i = 0; i < letters.length; i++) {
+        let char = letters[i];
+        if (char === 'a') {
+            count++;
+        }
+    }
+    return count;
 }
 
 
-let n = 100000;
-let s = "a";
+let n = 10;
+let s = "aba";
 
 console.log(repeatedString(s, n));
