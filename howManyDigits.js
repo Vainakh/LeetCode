@@ -5,7 +5,7 @@
 const countDigits = (num) => {
   let employees = 0;
   let count = num;
- for (let i = 0; i < num; i += 1)
+ for (let i = 1; i <= num; i += 1){
     if (i < 10) {
       employees += 1;
       count -= 1; 
@@ -19,6 +19,7 @@ const countDigits = (num) => {
       employees += 1;
       count -= 4;
     }
+  }
   return employees;
 }
 
