@@ -35,18 +35,25 @@ var deepestLeavesSum = function(root) {
   const innerFunction = (node) => {
       if (node.left) {
           depth += 1;
+          console.log(depth);
           innerFunction(node.left);
           maxDepth = Math.max(maxDepth, depth);
+          console.log(maxDepth)
           depth -= 1;
       }
       
       if (node.right) {
           depth += 1;
+          console.log(depth);
           innerFunction(node.right);
           maxDepth = Math.max(maxDepth, depth);
+          console.log(maxDepth)
           depth -= 1;
       } 
   }
+
+//   console.log(depth);
+//   console.log(maxDepth)
   
   innerFunction(root); 
   
