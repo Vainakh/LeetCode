@@ -45,11 +45,15 @@ const minSubArrayLen = (array, n) => {
   return minLength === Infinity ? null : minLength;
 }
 
-let a = (minSubArrayLen(array1, n1));
-// let b = (minSubArrayLen(array2, n2));
-// let c = (minSubArrayLen(array3, n3));
-// let d = (minSubArrayLen(array4, n4));
-// let e = (minSubArrayLen(array5, n5));
-// let f = (minSubArrayLen(array6, n6));
+let a = (minSubArrayLen(array1, n1));//2
+let b = (minSubArrayLen(array2, n2));//2
+let c = (minSubArrayLen(array3, n3));//1
+let d = (minSubArrayLen(array4, n4));//3
+let e = (minSubArrayLen(array5, n5));//5
+let f = (minSubArrayLen(array6, n6));//2
+let g = (minSubArrayLen(array7, n7));//0
 
-console.log(a);
+// time complexity = O(n)
+// space complexity = O(n)
+
+console.log(a, b, c, d, e, f, g);
