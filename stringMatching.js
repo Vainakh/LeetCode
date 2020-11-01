@@ -44,12 +44,11 @@ var stringMatching = function(words) {
 
   for (let i = 0; i < words.length; i++) { 
       for (let j = 0; j < words.length; j++) { 
-          if ((words[i] !== words[j]) && words[j].includes(words[i])) { 
+          if ((words[i] !== words[j]) && !(subs.includes(words[i])) && words[j].includes(words[i])) { 
              subs.push(words[i]);
           }
       }
   }
-  
   return subs;
 };
 
