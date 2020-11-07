@@ -38,10 +38,33 @@
 // Input: nums = [1,-2,-3]
 // Output: 5
 
-const minStartValue = () => {
+const minStartValue = (nums) => {
+    let negTotal = 0;
+    let min = Infinity;
 
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] < 0) {
+        negTotal += nums[i];
+      }
+      // console.log(negTotal);
+      if (min > nums[i]) {
+        min = nums[i];
+      }
+    }
+      let negPosTotal = Math.abs(negTotal);
+      if (negPosTotal > min) {
+        return negPosTotal;
+      } else {
+        return min;
+      }
+      
+    console.log(negPosTotal);
+    console.log(min);
+    console.log(Math.abs(negTotal));
 };
 
-let nums = [1,2];
+// let nums = [1,2];//1;
+let nums = [1,-2,-3]//5;
+let nums = [-3,2,-3,4,2];//5
 
-console.log(minStartValue())
+console.log(minStartValue(nums));
