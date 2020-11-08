@@ -1,6 +1,9 @@
 // Write a function which returns unique value from sorted array. Some numbers could be negative.
 
 const countUniqueValues = (array) => {
+  if (array.length === 0) {
+    return [];
+  }
     let i = 0;
     for (let j = 1; j < array.length; j++) {
       if (array[i] !== array[j]) {
