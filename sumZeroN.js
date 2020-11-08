@@ -43,6 +43,6 @@ var sumZero = function(n) {
 
 // let n = 5;
 
-let n = 1;
+let n = 3;
 
 console.log(sumZero(n));
