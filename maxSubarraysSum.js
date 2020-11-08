@@ -2,16 +2,6 @@
 
 // note that the subArray must consist of consecutive elemenets from the original array. In the first example below, [100, 200, 300] is a subarray of the original array but [100, 300] is not.
 
-let array1 =[100, 200, 300, 400];
-let n1 = 2;
-let array2 = [1, 4, 2, 10, 23, 3, 1, 0, 20];
-let n2 = 4;
-let array3 = [-3, 4, 0, -2, 6, -1];
-let n3 = 2;
-let array4 = [3, -2, 7, -4, 1, -1, 4, -2, 1];
-let n4 = 2;
-let array5 = [2, 3];
-let n5 = 3;
 
 // const maxSubarraySum = (array, n) => {
 
@@ -53,6 +43,19 @@ function maxSubarraySum(array, n){
 
   return maxSum;
 }
+
+
+let array1 =[100, 200, 300, 400];
+let n1 = 2;
+let array2 = [1, 4, 2, 10, 23, 3, 1, 0, 20];
+let n2 = 4;
+let array3 = [-3, 4, 0, -2, 6, -1];
+let n3 = 2;
+let array4 = [3, -2, 7, -4, 1, -1, 4, -2, 1];
+let n4 = 2;
+let array5 = [2, 3];
+let n5 = 3;
+
 
 let a = maxSubarraySum(array1, n1);//700
 // let b = maxSubarraySum(array2, n2);//39
