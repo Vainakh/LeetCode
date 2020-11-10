@@ -70,6 +70,16 @@ class SinglyLinkedList {
     }
     return current;
   }
+  shift() {
+    if (!this.head) return undefined;
+    let current = this.head;
+    this.head = current.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return current;
+  }
 }
 
 // let first = new Node("Hi");
@@ -87,4 +97,5 @@ list.push("!")
 // console.log(list);
 // list.traverse();
 // console.log(list);
-console.log(list.pop());
+// console.log(list.pop());
+console.log(list.shift());
