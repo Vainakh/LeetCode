@@ -92,6 +92,17 @@ class SinglyLinkedList {
       this.length++;
       return this;
   }
+  get(index) {
+  let count = 0;
+  let current = this.head;
+  if (index < 0 || index >= this.length) return null;
+  while (index !== count) {
+    current = current.next;
+    count++;
+  }
+
+  return current;
+  }
 }
 
 // let first = new Node("Hi");
@@ -110,4 +121,4 @@ list.push("!")
 // list.traverse();
 // console.log(list);
 // console.log(list.pop());
-console.log(list.unshift("WOW"));
+console.log(list.get(1));
