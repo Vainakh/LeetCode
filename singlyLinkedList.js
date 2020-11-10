@@ -100,8 +100,15 @@ class SinglyLinkedList {
     current = current.next;
     count++;
   }
-
   return current;
+  }
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
   }
 }
 
@@ -121,4 +128,6 @@ list.push("!")
 // list.traverse();
 // console.log(list);
 // console.log(list.pop());
-console.log(list.get(1));
+// console.log(list.get(1));
+console.log(list.set(1, "VICTORY"))
+console.log(list)
