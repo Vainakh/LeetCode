@@ -42,7 +42,7 @@ const minSubArrayLen = (array, n) => {
     }
   }
 
-  return minLength === Infinity ? null : minLength;
+  return minLength === Infinity ? 0 : minLength;
 }
 
 let a = (minSubArrayLen(array1, n1));//2
