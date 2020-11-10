@@ -80,6 +80,18 @@ class SinglyLinkedList {
     }
     return current;
   }
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.next = this.head;
+      this.head = newNode;
+    }
+      this.length++;
+      return this;
+  }
 }
 
 // let first = new Node("Hi");
@@ -98,4 +110,4 @@ list.push("!")
 // list.traverse();
 // console.log(list);
 // console.log(list.pop());
-console.log(list.shift());
+console.log(list.unshift("WOW"));
