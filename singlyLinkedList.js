@@ -123,6 +123,16 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === this.length - 1) return this.pop();
+    if (index === 0) return this.shift();
+    let prevNode = this.get(index - 1);
+    let removed = prevNode.next;
+    prevNode.next = removed.next;
+    this.length--;
+    return removed;
+  }
 }
 
 // let first = new Node("Hi");
@@ -143,5 +153,5 @@ list.push("!")
 // console.log(list.pop());
 // console.log(list.get(1));
 // console.log(list.set(1, "VICTORY"))
-console.log(list)
-console.log(list.insert(2, "Last"))
+console.log(list);
+console.log(list.remove(2));
