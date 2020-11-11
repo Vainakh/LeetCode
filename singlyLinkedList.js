@@ -133,6 +133,15 @@ class SinglyLinkedList {
     this.length--;
     return removed;
   }
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 // let first = new Node("Hi");
