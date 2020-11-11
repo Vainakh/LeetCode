@@ -88,6 +88,14 @@ class DoublyLinkedList {
       return current;
     }
   }
+  set(index, val) {
+    let current = this.get(index);
+    if (current) {
+      current.val = val;
+      return true;
+    }
+   return false;
+  }
 }
 
 // first = new Node(12);
@@ -107,4 +115,7 @@ console.log(list.push("LAST ITEM"));
 // console.log(list.shift());
 // console.log(list.shift());
 // console.log(list.unshift("NEWHEAD"));
-console.log(list.get(2));
+// console.log(list.get(2));
+console.log(list.set(0, "HELLO"));
+console.log(list.set(5, "Hello"));
+console.log(list);
