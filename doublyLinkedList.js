@@ -122,6 +122,13 @@ class DoublyLinkedList {
   }
 }
 
+// Big O of DoublyLinkedList:
+// Insertion - O(1);
+// Removal - O(1);
+// Searching - O(N);
+// Access - O(1);
+
+
 // first = new Node(12);
 // console.log(first);
 // first.next = new Node(13);
