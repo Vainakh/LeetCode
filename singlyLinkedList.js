@@ -175,3 +175,12 @@ list.push(350);
 list.push(999);
 console.log(list);
 console.log(list.print());
+
+// Big O complexity: 
+
+Insertion = O(1);
+Removal = O(1) || O(n);
+Searching = O(n);
+Access = O(n);
+
+// If compared to arrays then LinkedLists are good alternative to insertion and deletion at the beginning. Attays have build in index whereas SinglyLinkedLists dont 
