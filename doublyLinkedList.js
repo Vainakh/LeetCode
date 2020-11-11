@@ -12,11 +12,31 @@ class DoublyLinkedList {
     this.tail = null;
     this.length = 0;
   }
+  push(val) {
+    let newNode = new Node(val);
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  
 }
 
-first = new Node(12);
-console.log(first);
-first.next = new Node(13);
-console.log(first.next);
-first.next.prev = first;
-console.log(first.next.prev);
+// first = new Node(12);
+// console.log(first);
+// first.next = new Node(13);
+// console.log(first.next);
+// first.next.prev = first;
+// console.log(first.next.prev);
+
+let list = new DoublyLinkedList();
+console.log(list);
+console.log(list.push(99));
+console.log(list.push(100));
+console.log(list.push("LAST ITEM"));
