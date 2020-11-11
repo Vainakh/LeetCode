@@ -66,6 +66,16 @@ class DoublyLinkedList {
     this.length++;
     return this;
   } 
+  get(index) {
+    if (index < 0 || index >= this.length  ) return null;
+    let count = 0;
+    let current = this.head;
+    while (count !=  index) {
+      current = current.next;
+      count++;
+    }
+    return current;
+  }
 }
 
 // first = new Node(12);
@@ -84,4 +94,5 @@ console.log(list.push("LAST ITEM"));
 // console.log(list.shift());
 // console.log(list.shift());
 // console.log(list.shift());
-console.log(list.unshift("NEWHEAD"));
+// console.log(list.unshift("NEWHEAD"));
+console.log(list.get(1));
