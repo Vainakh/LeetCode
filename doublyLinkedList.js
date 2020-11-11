@@ -67,14 +67,26 @@ class DoublyLinkedList {
     return this;
   } 
   get(index) {
+    let count;
+    let current;
     if (index < 0 || index >= this.length  ) return null;
-    let count = 0;
-    let current = this.head;
-    while (count !=  index) {
-      current = current.next;
-      count++;
+    if (index <= this.length / 2) {
+      count = 0;
+      current = this.head;
+      while (count !==  index) {
+        current = current.next;
+        count++;
+      }
+      return current;
+    } else {
+      count = this.length - 1;
+      current = this.tail;
+      while (count !== index) {
+        current = current.prev;
+        count--;
+      }
+      return current;
     }
-    return current;
   }
 }
 
@@ -95,4 +107,4 @@ console.log(list.push("LAST ITEM"));
 // console.log(list.shift());
 // console.log(list.shift());
 // console.log(list.unshift("NEWHEAD"));
-console.log(list.get(1));
+console.log(list.get(2));
