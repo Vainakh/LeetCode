@@ -35,6 +35,12 @@ class Stack {
   }
 }
 
+// Big(O) of stacks 
+// Insertion - O(1);
+// Removal - O(1);
+// Searching - O(N);
+// Access - O(N);
+
 let stack = new Stack();
 stack.push("First");
 stack.push("Second");
