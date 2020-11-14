@@ -38,6 +38,43 @@ class BinarySearchTree {
     
     return this;
   }
+  find(value) {
+  //   let current = this.root;
+  //   let newNode = new Node(value);
+  //   let found = false;
+  //   if (!this.root) return false;
+  //   if (current.value === newNode.value) {
+  //     return newNode.value;
+  //   } else {
+  //     if (value > current.value) {
+  //       if (current.right) {
+  //         current = current.right;
+  //       } else {
+  //         return false;
+  //       }
+  //     } else {
+  //       if (value < current.value) {
+  //         current = current.left;
+  //       } else {
+  //         return false;
+  //       }
+  //     } 
+  //   }
+   
+    let current = this.root;
+    let found = false;
+    if (!this.root) return false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 let tree = new BinarySearchTree();
@@ -50,7 +87,7 @@ console.log(tree.insert(16));
 console.log(tree.insert(7));
 console.log(tree.insert(3));
 // console.log(tree.insert(3));
-console.log(tree);
+console.log(tree.find(7));
 // tree.root = new Node(10);
 // tree.root.right = new Node(15);
 // tree.root.left = new Node(7);
@@ -61,3 +98,4 @@ console.log(tree);
 // console.log(tree.root.right);
 // console.log(tree.root.left);
 // console.log(tree.insert(100));
+// console.log(tree);
