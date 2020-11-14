@@ -77,6 +77,9 @@ class BinarySearchTree {
   }
 }
 
+//Insertion - O(log n);
+//Searching - O(log n);
+
 let tree = new BinarySearchTree();
 console.log(tree.insert(10));
 console.log(tree.insert(5));
