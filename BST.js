@@ -75,6 +75,19 @@ class BinarySearchTree {
     }
     return false;
   }
+  bfs() {
+    let data = [],
+       queue = [],
+       node = this.root;
+    queue.push(node);
+    while(queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
 }
 
 //Insertion - O(log n);
@@ -90,7 +103,7 @@ console.log(tree.insert(16));
 console.log(tree.insert(7));
 console.log(tree.insert(3));
 // console.log(tree.insert(3));
-console.log(tree.find(7));
+// console.log(tree.find(7));
 // tree.root = new Node(10);
 // tree.root.right = new Node(15);
 // tree.root.left = new Node(7);
@@ -101,4 +114,4 @@ console.log(tree.find(7));
 // console.log(tree.root.right);
 // console.log(tree.root.left);
 // console.log(tree.insert(100));
-// console.log(tree);
+console.log(tree.bfs());
