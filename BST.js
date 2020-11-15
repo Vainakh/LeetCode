@@ -88,13 +88,23 @@ class BinarySearchTree {
     }
     return data;
   }
-  DFSpreorder() {
+  DFSPreOrder() {
     let data = [];
     const traverse = (node) => {
       data.push(node.value);
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
 
+    }
+    traverse(this.root);
+    return data;
+  }
+  DFSPostOrder() {
+    let data = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
     }
     traverse(this.root);
     return data;
@@ -130,4 +140,5 @@ console.log(tree.insert(20));
 // console.log(tree.insert(100));
 // console.log(tree.BFS());
 console.log(tree);
-console.log(tree.DFSpreorder());
+console.log(tree.DFSPreOrder());//[10, 6, 3, 8, 15, 20]; root then right then left
+console.log(tree.DFSPostOrder());//[3, 8, 6, 20, 15, 10]; first traverse entire tree first right then left then node
