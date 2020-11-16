@@ -139,9 +139,9 @@ class Node {
 }
 
 //big O
-Insertion - O(log N);
-Removal - O(log N);
-Search - O(N);
+// Insertion - O(log N);
+// Removal - O(log N);
+// Search - O(N);
 
 
 
