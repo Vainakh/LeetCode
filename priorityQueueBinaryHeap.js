@@ -134,8 +134,15 @@ class Node {
   constructor(val, priority) {
     this.val = val;
     this.priority = priority;
+    this.insertTime = Date.now();
   }
 }
+
+//big O
+Insertion - O(log N);
+Removal - O(log N);
+Search - O(N);
+
 
 
 
