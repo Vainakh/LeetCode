@@ -1,8 +1,24 @@
+//1. Simple version
+
+// const hash = (key, arrayLength) => {
+//   let total = 0;
+//   for (let char of key) {
+//     let value = char.charCodeAt(0) - 96;
+//     total = (total + value) % arrayLength;
+//   }
+//   return total;
+// }
+
+//2. Second verison, more complex
+
 const hash = (key, arrayLength) => {
   let total = 0;
-  for (let char of key) {
+  let weirdPrime = 31;
+
+  for (let i = 0; i < Math.min(key.length, 100); i++) {
+    let char = key[i];
     let value = char.charCodeAt(0) - 96;
-    total = (total + value) % arrayLength;
+    total = (total * weirdPrime + value) % arrayLength;
   }
   return total;
 }
