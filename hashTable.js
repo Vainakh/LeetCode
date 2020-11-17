@@ -1,5 +1,5 @@
 class HashTable {
-  constructor(size = 4) {
+  constructor(size = 53) {
     this.keyMap = new Array(size);
   }
   _hash(key) {
@@ -19,12 +19,37 @@ class HashTable {
     } 
     this.keyMap[index].push([key, value]);
   }
+  get(key) {
+    let index = this._hash(key);
+      if (this.keyMap[index]) {
+        for (let i = 0; i < this.keyMap[index].length; i++) {
+        if (this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i][1];
+        }  
+      } 
+    } 
+    return "There isnt such key...try again!";
+  }
 }
 
-let newHash = new HashTable();
-console.log(newHash.set("hello world", "goodbye!!"));
-console.log(newHash.set("dogs", "are cool"));
-console.log(newHash.set("cats", "are fine"));
-console.log(newHash.set("i love", "pizza"));
-console.log(newHash.set("hi", "bye"));
-console.log(newHash);
+//on set
+// let newHash = new HashTable(4);
+// console.log(newHash.set("hello world", "goodbye!!"));
+// console.log(newHash.set("dogs", "are cool"));
+// console.log(newHash.set("cats", "are fine"));
+// console.log(newHash.set("i love", "pizza"));
+// console.log(newHash.set("hi", "bye"));
+// console.log(newHash);
+
+//on get
+let newHash = new HashTable(17);
+console.log(newHash.set("maroon", "#800000"));
+console.log(newHash.set("yellow", "#FFFF00"));
+console.log(newHash.set("olive", "808000"));
+console.log(newHash.set("salmon", "FA8072"));
+console.log(newHash.set("lightcoral", "#F08080"));
+console.log(newHash.set("mediumvioletred", "#C71585"));
+console.log(newHash.set("plum", "#DDA0DD"));
+console.log(newHash.get("yellow"));
+console.log(newHash.get("seethrough"));
+console.log(newHash.get("maroon"));
