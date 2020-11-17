@@ -30,6 +30,21 @@ class HashTable {
     } 
     return "There isnt such key...try again!";
   }
+  values() {
+    let valuesArray = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          if (!valuesArray.includes(this.keyMap[i][j][1])) {
+            valuesArray.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    return valuesArray;
+  }
+  keys() {
+  }
 }
 
 //on set
@@ -50,6 +65,9 @@ console.log(newHash.set("salmon", "FA8072"));
 console.log(newHash.set("lightcoral", "#F08080"));
 console.log(newHash.set("mediumvioletred", "#C71585"));
 console.log(newHash.set("plum", "#DDA0DD"));
+console.log(newHash.set("blue", "#DDA0DD"));
+console.log(newHash.set("lightblue", "#DDA0DD"));
 console.log(newHash.get("yellow"));
 console.log(newHash.get("seethrough"));
 console.log(newHash.get("maroon"));
+console.log(newHash.values());
