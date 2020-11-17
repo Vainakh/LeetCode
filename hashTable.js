@@ -1,5 +1,5 @@
 class HashTable {
-  constructor(size = 53) {
+  constructor(size = 4) {
     this.keyMap = new Array(size);
   }
   _hash(key) {
@@ -12,7 +12,19 @@ class HashTable {
     }
     return total;
   }
+  set(key, value) {
+    let index = this._hash(key);
+    if (!this.keyMap[index]) {
+      this.keyMap[index] = [];
+    } 
+    this.keyMap[index].push([key, value]);
+  }
 }
 
 let newHash = new HashTable();
+console.log(newHash.set("hello world", "goodbye!!"));
+console.log(newHash.set("dogs", "are cool"));
+console.log(newHash.set("cats", "are fine"));
+console.log(newHash.set("i love", "pizza"));
+console.log(newHash.set("hi", "bye"));
 console.log(newHash);
