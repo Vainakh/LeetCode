@@ -58,6 +58,12 @@ class HashTable {
   }
 }
 
+//Big O of Hash tables
+
+// Insert - O(1);
+// Deletion - O(1);
+// Access - O(1);
+
 //on set
 // let newHash = new HashTable(4);
 // console.log(newHash.set("hello world", "goodbye!!"));
