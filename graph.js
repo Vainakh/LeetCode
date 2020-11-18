@@ -13,6 +13,13 @@ class Graph {
     this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(vertex => vertex !== vertex2);
     this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(vertex => vertex !== vertex1);
   }
+  removeVertex(vertex) {
+    while (this.adjacencyList[vertex].length) {
+      let adjecentVertex = this.adjacencyList[vertex].pop();
+      this.removeEdge(vertex, adjecentVertex);
+    }
+    delete this.adjacencyList[vertex];
+  }
 }
 
 let vertex1 = "San Francisco";
@@ -27,6 +34,9 @@ graph.addVertex(vertex3);
 graph.addEdge(vertex1, vertex2);
 graph.addEdge(vertex2, vertex3);
 graph.addEdge(vertex3, vertex1);
-graph.removeEdge(vertex1, vertex2);
+// graph.removeEdge(vertex1, vertex2);
+graph.removeVertex(vertex1);
+graph.removeVertex(vertex2);
+graph.removeVertex(vertex3);
 
 console.log(graph);
