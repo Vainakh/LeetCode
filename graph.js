@@ -20,23 +20,55 @@ class Graph {
     }
     delete this.adjacencyList[vertex];
   }
+  DFSrecursive(start) {
+    let result= [];
+    let visited = {};
+    let adjacencyList = this.adjacencyList;
+    (function dfs(vertex) {
+      if (!vertex) return null;
+      visited[vertex] = true;
+      result.push(vertex);
+        adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+        return dfs(neighbor);
+        }
+      });
+    })(start);
+    return result;
+  }
 }
 
-let vertex1 = "San Francisco";
-let vertex2 = "New York";
-let vertex3 = "Moscow";
-
+// let vertex1 = "San Francisco";
+// let vertex2 = "New York";
+// let vertex3 = "Moscow";
+let vertex = "A";
 let graph = new Graph();
-graph.addVertex(vertex1);
-graph.addVertex(vertex2);
-graph.addVertex(vertex3);
+// graph.addVertex(vertex1);
+// graph.addVertex(vertex2);
+// graph.addVertex(vertex3);
 
-graph.addEdge(vertex1, vertex2);
-graph.addEdge(vertex2, vertex3);
-graph.addEdge(vertex3, vertex1);
-// graph.removeEdge(vertex1, vertex2);
-graph.removeVertex(vertex1);
-graph.removeVertex(vertex2);
-graph.removeVertex(vertex3);
+// graph.addEdge(vertex1, vertex2);
+// graph.addEdge(vertex2, vertex3);
+// graph.addEdge(vertex3, vertex1);
+// // graph.removeEdge(vertex1, vertex2);
+// graph.removeVertex(vertex1);
+// graph.removeVertex(vertex2);
+// graph.removeVertex(vertex3);
 
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addVertex("E");
+graph.addVertex("F");
+
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("B", "D");
+graph.addEdge("C", "E");
+graph.addEdge("D", "E");
+graph.addEdge("D", "F");
+graph.addEdge("E", "F");
+
+console.log(graph.DFSrecursive(vertex));
 console.log(graph);
