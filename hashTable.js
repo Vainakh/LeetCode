@@ -59,7 +59,7 @@ class HashTable {
 }
 
 //Big O of Hash tables
-
+//(average case)
 // Insert - O(1);
 // Deletion - O(1);
 // Access - O(1);
