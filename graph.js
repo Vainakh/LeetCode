@@ -36,6 +36,44 @@ class Graph {
     })(start);
     return result;
   }
+  DFSiterative(start) {
+    let stack = [start];
+    let result = [];
+    let visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+    while(stack.length) {
+      currentVertex = stack.pop();
+      result.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+    return result;
+  }
+  BFS(start) {
+    let queue = [start];
+    let result = [];
+    let visited = {};
+    let current;
+    visited[start] = true;
+    
+    while(queue.length) {
+      current = queue.shift();
+      result.push(current);
+      this.adjacencyList[current].forEach(neighbor => {
+        if(!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+    return result;
+  }
 }
 
 // let vertex1 = "San Francisco";
@@ -70,5 +108,5 @@ graph.addEdge("D", "E");
 graph.addEdge("D", "F");
 graph.addEdge("E", "F");
 
-console.log(graph.DFSrecursive(vertex));
-console.log(graph);
+console.log(graph.BFS(vertex));
+// console.log(graph);
