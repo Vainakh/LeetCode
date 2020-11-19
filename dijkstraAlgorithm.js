@@ -6,6 +6,9 @@ class PriorityQueue {
     this.values.push({value: priority});
     this.sort();
   }
+  dequeue() {
+    return this.values.shift();
+  }
 }
 
 
