@@ -32,12 +32,10 @@ const bubbleSort = (array) => {
     noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
       if (array[j] > array[j + 1]) {
-        if (i !== min) {
-          temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
-          noSwaps = false;
-        }
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+        noSwaps = false;
       }
     }
       if (noSwaps) break;
