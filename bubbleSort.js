@@ -1,15 +1,15 @@
-const bubbleSort = (array) => {
-  for (let i = array.length; i > 0; i--) {
-    for (let j = 0; j < i - 1; j++) {
-      if (array[j] > array[j + 1]) {
-        temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-      }
-    }
-  }
-  return array;
-}
+// const bubbleSort = (array) => {
+//   for (let i = array.length; i > 0; i--) {
+//     for (let j = 0; j < i - 1; j++) {
+//       if (array[j] > array[j + 1]) {
+//         temp = array[j];
+//         array[j] = array[j + 1];
+//         array[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return array;
+// }
 
 // function bubbleSort(array) {
 //   const swap = (array, idx1, idx2) => {
@@ -32,10 +32,12 @@ const bubbleSort = (array) => {
     noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
       if (array[j] > array[j + 1]) {
-        temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        noSwaps = false;
+        if (i !== min) {
+          temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+          noSwaps = false;
+        }
       }
     }
       if (noSwaps) break;
