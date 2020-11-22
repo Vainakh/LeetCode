@@ -30,6 +30,8 @@ const mergeSort = (array) => {
   let right = mergeSort(array.slice(mid));
   return merge(left, right);
 }
+//time complexity - O(n log n);
+//space complexity - O(n);
 
 // let array1 = [1, 3, 9, 10, 62, 100];
 // let array2 = [1, 2, 3, 5, 6];
