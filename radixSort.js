@@ -30,3 +30,6 @@ const radixSort = (nums) => {
 
 let nums = [12, 234, 54322, 12, 988, 299];
 console.log(radixSort(nums));
+
+//time complexity - O(nk)
+//space complexity - O(n + k)
