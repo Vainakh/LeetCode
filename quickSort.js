@@ -27,7 +27,11 @@ const quickSort = (array, left=0, right = array.length-1) => {
   }
   return array;
 };
-let array = [4, 8, 2, 1, 5, 7, 6, 3];//3
+let array = [4, 8, 2, 1, 5, 7, 6, 3, -5, 100];//3
 
 // console.log(pivot(array, start, end));
 console.log(quickSort(array));
+
+
+//time complexity - best, average - O(n log n); worst - O(n);
+//space complexity - O(log n);
