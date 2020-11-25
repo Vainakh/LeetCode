@@ -19,10 +19,10 @@ const isSubsequence = (array, sequence) => {
   return false;
 }
 
-let string1 = "hello";
-let string2 = "hello world";
+// let string1 = "hello";
+// let string2 = "hello world";
 
-// let string1 = "sing";
-// let string2 = "sting";
+let string1 = "sing";
+let string2 = "sting";
 
 console.log(isSubsequence(string1, string2));

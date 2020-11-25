@@ -24,23 +24,13 @@
 function maxSubarraySum(array, n){
   let maxSum = 0;
   let tempSum = 0;
- 
-  if (array.length < n) return null; 
-  for (let i = 0; i < n; i++) { 
-    maxSum += array[i];
-    console.log("maxSum " + maxSum)
-    console.log("maxSum " + maxSum + " += " + "array[i] " + array[i]);
-  }
-  tempSum = maxSum;
-  
+  if (array.length < n) return 0;
+  for (let i = 0; i < n; i++) tempSum += array[i];
+  maxSum = tempSum;
   for (let i = n; i < array.length; i++) {
-    console.log("tempSum " + tempSum)
     tempSum = tempSum - array[i - n] + array[i];
-    console.log("tempSum" + tempSum + " - array[i - n]" + array[i - n] + " + array[i]" + array[i]);
-    maxSum = Math.max(maxSum, tempSum);
-    console.log("maxSum " + maxSum)
+    maxSum = Math.max(tempSum, maxSum);
   }
-
   return maxSum;
 }
 
@@ -57,11 +47,11 @@ let array5 = [2, 3];
 let n5 = 3;
 
 
-let a = maxSubarraySum(array1, n1);//700
-// let b = maxSubarraySum(array2, n2);//39
+// let a = maxSubarraySum(array1, n1);//700
+let b = maxSubarraySum(array2, n2);//39
 // let c = maxSubarraySum(array3, n3);//5
 // let d = maxSubarraySum(array4, n4);//5
 // let e = maxSubarraySum(array5, n5);//null
 
 
-console.log(a);//, b, c, d, e
+console.log(b);//, b, c, d, e
