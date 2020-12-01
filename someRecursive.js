@@ -1,8 +1,15 @@
 //Write a recursive function which accepts an array and a callback.The function returns true if a single value in an array returns true when passed to the callback. Otherwise return false.
 
+//provided solution
+
+// function someRecursive(array, callback) {
+//   if (array.length === 0) return false;
+//   if (callback(array[0])) return true;
+//   return someRecursive(array.slice(1),callback);
+// }
+
+
 const someRecursive = (array, callback) => {
-  // console.log(array.slice(1));
-  // console.log(callback)
   if (array.length === 0) return false;
   return (callback(array[0]) + someRecursive(array.slice(1), callback)) ? true : someRecursive(array.slice(1), callback);
 }
