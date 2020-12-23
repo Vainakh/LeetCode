@@ -62,9 +62,7 @@ const luckyInteger = (arr) => {
       matches.push(key);
     } 
   }
-
   return matches.length ? matches.sort((a, b) => b - a)[0] : -1;
-  console.log(matches);
 };
 
 let arr = [2,2,3,4,4,4];

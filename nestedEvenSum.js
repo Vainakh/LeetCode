@@ -1,7 +1,8 @@
 //Write a recursive function. Return the sum of all even numbers in an object which may contain nested objects.
 
-const nestedEvenSum = () => {
+const nestedEvenSum = (obj) => {
   // add whatever parameters you deem necessary - good luck!
+  if (Object.keys)
 }
 
 
