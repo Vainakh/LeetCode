@@ -235,6 +235,16 @@ class SinglyLinkedList {
       length--;
       return current;
     }
+    shift() {
+      if (this.length === 0) return undefined;
+      let currentHead = this.head;
+      this.head = currentHead.next;
+      this.length--;
+      if (this.length === 0) {
+        this.tail = 0;
+      }
+      return currentHead;
+    }
 };
 
 let list = new SinglyLinkedList();
