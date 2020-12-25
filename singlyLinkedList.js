@@ -267,6 +267,14 @@ class SinglyLinkedList {
       }
       return current;
     }
+    set(index, value) {
+      let position = this.get(index);
+      if (position) {
+        position.val = value;
+        return true;
+      }
+      return false;
+    }
 };
 
 let list = new SinglyLinkedList();
