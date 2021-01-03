@@ -20,6 +20,7 @@
 //   }
 // }
 
+
 // class Node {
 //   constructor(val) {
 //     this.val = val;
@@ -70,28 +71,7 @@
 //     }
 //     return current;
 //   }
-//   shift() {
-//     if (!this.head) return undefined;
-//     let current = this.head;
-//     this.head = current.next;
-//     this.length--;
-//     if (this.length === 0) {
-//       this.tail = null;
-//     }
-//     return current;
-//   }
-//   unshift(val) {
-//     let newNode = new Node(val);
-//     if (!this.head) {
-//       this.head = newNode;
-//       this.tail = this.head;
-//     } else {
-//       this.next = this.head;
-//       this.head = newNode;
-//     }
-//       this.length++;
-//       return this;
-//   }
+//   
 //   get(index) {
 //   let count = 0;
 //   let current = this.head;
@@ -107,7 +87,7 @@
 //     if (foundNode) {
 //       foundNode.val = val;
 //       return true;
-//     }
+//     }t
 //     return false;
 //   }
 //   insert(index, val) {
