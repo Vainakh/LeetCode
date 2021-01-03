@@ -43,7 +43,6 @@ const minAbsoluteDifference = (arr) => {
   let minDifference = [];
   let differences = []; 
   let results = [];
-  let finals = [];
 
   for (let num1 in arr) {
     for (let num2 in arr) {
@@ -53,22 +52,17 @@ const minAbsoluteDifference = (arr) => {
         minDifference = Math.min(...differences);
       }
     }
-  }
+  };
   
   for (let i = 0; i < arr.length; i ++) {
     for (let j = 0; j < arr.length; j ++) {
       if (arr[i] - arr[j] === minDifference) {
-        results.push([arr[i], arr[j]]);
+        results.push([ arr[j], arr[i]]);
       } 
     }
-  }
+  };
 
-  for (let i = 0; i < results.length; i++) {
-    let current = results[i];
-    let next = results[i + 1];
-   
-    
-  }
+  return results.sort((a, b) => a[0] - b[0]);
 };
 
 let arr = [4,2,1,3];//[[1,2],[2,3],[3,4]]
