@@ -43,26 +43,19 @@ const minAbsoluteDifference = (arr) => {
   let minDifference = [];
   let differences = []; 
   let results = [];
-
-  for (let num1 in arr) {
-    for (let num2 in arr) {
-      if (arr[num1] !== arr[num2]) {
-        let currentDifference = Math.abs(arr[num1] - arr[num2]);
-        differences.push(currentDifference);
-        minDifference = Math.min(...differences);
-      }
-    }
-  };
+  let min = Infinity;
   
-  for (let i = 0; i < arr.length; i ++) {
-    for (let j = 0; j < arr.length; j ++) {
-      if (arr[i] - arr[j] === minDifference) {
-        results.push([ arr[j], arr[i]]);
-      } 
-    }
+  arr.sort((a, b) => a - b);
+  for (let i = 0; i < arr.length - 1; i++) {
+    min = Math.min(min, arr[i + 1] - arr[i]);
+  }
+  
+  for (let i = 0; i < arr.length - 1; i ++) {
+    if (arr[i + 1] - arr[i] === min) {
+      results.push([arr[i], arr[i + 1]])
+    } 
   };
-
-  return results.sort((a, b) => a[0] - b[0]);
+  return results;
 };
 
 let arr = [4,2,1,3];//[[1,2],[2,3],[3,4]]
