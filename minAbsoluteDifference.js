@@ -40,8 +40,6 @@
 
 
 const minAbsoluteDifference = (arr) => {
-  let minDifference = [];
-  let differences = []; 
   let results = [];
   let min = Infinity;
   
