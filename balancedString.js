@@ -48,7 +48,7 @@
 
 const balancedString = (s) => {
   let n = s.length;
-
+  let frequency = n / 4;
   let standard = "QWER";
   let standardObj = {};
   for (let key in standard) {
@@ -65,10 +65,12 @@ const balancedString = (s) => {
       }
     }
   }
+
+  
   
 
   console.log({standardObj});
-  console.log({finalOutput});
+  console.log({});
 };
 
 let s = "WQWRQQQW";//3

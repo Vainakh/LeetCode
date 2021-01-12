@@ -46,7 +46,10 @@ const frequencySort = (nums) => {
     }
   }
 
-  
+  for (let key in frequencyCounter) {
+    
+  }
+
   console.log({frequencyCounter});
   
 };
