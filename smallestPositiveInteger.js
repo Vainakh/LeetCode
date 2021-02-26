@@ -47,8 +47,6 @@ const solution = (array) => {
 
 // Given A = [−1, −3], the function should return 1.
 
-
-
   let final = missingInRange.sort((a, b) => b - a)[0];
   return Number(final);
 };
