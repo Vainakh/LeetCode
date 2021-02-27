@@ -186,22 +186,44 @@
 // var output = findShortestElement(['a', 'two', 'three']);
 // console.log(output); // --> 'a'
 
-function findShortestElement(arr) {
-  let shortest = null;
-  if (arr.length === 0) {
-    return '';
-  }
-  for(let i = 0; i < arr.length; i++){
-      if(shortest == null){
-        shortest = arr[i];
-      } else if(arr[i].length < shortest.length){
-        shortest = arr[i];
-      }
-  }
+// function findShortestElement(arr) {
+//   let shortest = null;
+//   if (arr.length === 0) {
+//     return '';
+//   }
+//   for(let i = 0; i < arr.length; i++){
+//       if(shortest == null){
+//         shortest = arr[i];
+//       } else if(arr[i].length < shortest.length){
+//         shortest = arr[i];
+//       }
+//   }
   
-  return shortest;
-};
+//   return shortest;
+// };
 
-var output = ['a', 'two', 'a', 'three', 'b'];
+// var output = ['a', 'two', 'a', 'three', 'b'];
 
-console.log(findShortestElement(output));
+// console.log(findShortestElement(output));
+
+
+// Write a function called "filterOddLengthWords".
+
+// Given an array of strings, "filterOddLengthWords" returns an array containing only the elements of the given array whose lengths are odd numbers.
+
+// var output = filterOddLengthWords(['there', 'it', 'is', 'now']);
+// console.log(output); // --> ['there', "now']
+
+// function filterOddLengthWords(words) {
+//   let newArray = [];
+//   for (let i = 0; i < words.length; i ++) {
+//     if (words[i].length % 2 !== 0) {
+//       newArray.push(words[i]);
+//     }
+//   }
+
+//   return newArray;
+// }
+
+// let output = ['there', 'it', 'is', 'now'];
+// console.log(filterOddLengthWords(output));
