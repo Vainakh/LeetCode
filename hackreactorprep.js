@@ -277,13 +277,47 @@
 // let output = [1, 2, 3];
 // console.log(computeSumOfAllElements(output));
 
-Write a function called "calculateBillTotal".
+// Write a function called "calculateBillTotal".
 
-Given the pre tax and pre tip amount of a meal, "calculateBillTotal" returns the total amount due after tax and tip.
+// Given the pre tax and pre tip amount of a meal, "calculateBillTotal" returns the total amount due after tax and tip.
 
-Notes:
+// Notes:
 
-Assume that sales tax is 9.5% and tip is 15%.
-Do NOT tip on the sales tax, only on the pre tip amount.
-var output = calculateBillTotal(20);
-console.log(output); // --> 24.9
+// Assume that sales tax is 9.5% and tip is 15%.
+// Do NOT tip on the sales tax, only on the pre tip amount.
+// var output = calculateBillTotal(20);
+// console.log(output); // --> 24.9
+
+// function calculateBillTotal(preTaxAndTipAmount) {
+//   let tax = preTaxAndTipAmount * .095;
+//   let tip = preTaxAndTipAmount * .15;
+//   let total = preTaxAndTipAmount + tax + tip;
+  
+//   return total;
+// }
+
+// let output = 20;
+// console.log(calculateBillTotal(output));
+
+// Write a function called "getStringLength".
+
+// Given a string, "getStringLength" returns the length of the given string.
+
+// Notes:
+
+// Do NOT use any native 'length' methods.
+// You might consider using 'substring' or 'slice' as alternatives.
+// var output = getStringLength('hello');
+// console.log(output); // --> 5
+
+function getStringLength(string) {
+  let count = 0;
+  while (string[count] !== undefined) 
+    count ++;
+
+  return count;
+}
+
+const output = 'hello';
+console.log(getStringLength(output));
+
