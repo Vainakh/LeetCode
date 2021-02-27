@@ -310,14 +310,29 @@
 // var output = getStringLength('hello');
 // console.log(output); // --> 5
 
-function getStringLength(string) {
-  let count = 0;
-  while (string[count] !== undefined) 
-    count ++;
+// function getStringLength(string) {
+//   let count = 0;
+//   while (string[count] !== undefined) 
+//     count ++;
 
-  return count;
+//   return count;
+// }
+
+// const output = 'hello';
+// console.log(getStringLength(output));
+
+// Write a function called "joinArrayOfArrays".
+
+// Given an array of arrays, "joinArrayOfArrays" returns a single array containing the elements of the nested arrays.
+
+// var output = joinArrayOfArrays([[1, 4], [true, false], ['x', 'y']]);
+// console.log(output); // --> [1, 4, true, false, 'x', 'y']
+// You should be familiar with the "concat" method for this problem.
+
+function joinArrayOfArrays(arr) {
+  let newArray = [].concat.apply([], arr);
+  return newArray;
 }
 
-const output = 'hello';
-console.log(getStringLength(output));
-
+let output = [[1, 4], [true, false], ['x', 'y']];
+console.log(joinArrayOfArrays(output));
