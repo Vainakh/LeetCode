@@ -816,3 +816,109 @@
 // console.log(output);
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "repeatString".
+
+// Given a string and a number, "repeatString" returns the given string repeated the given number of times.
+
+// var output = repeatString('code', 3);
+// console.log(output); // --> 'codecodecode'
+
+// function repeatString(string, num) {
+//   let repeated = '';
+//   i = 0;
+//   while(i < num) {
+//     repeated += string;
+//     i++;
+//   }
+   
+//   return repeated;
+// };
+
+// let output = repeatString('code', 3);
+// console.log(output);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "getLongestOfThreeWords".
+
+// Given 3 words, "getLongestOfThreeWords" returns the longest of three words.
+
+// Notes:
+
+// If there is a tie, it should return the first word in the tie.
+// var output = getLongestOfThreeWords('these', 'three', 'words');
+// console.log(output); // --> 'these'
+
+// function getLongestOfThreeWords(word1, word2, word3) {
+//   if (word1.length >= word2.length && word1.length >= word3.length) {
+//     return word1;
+//   } else if (word2.length > word1.length  && word2.length >= word3.length) {
+//     return word2;
+//   } else {
+//     return word3;
+//   }
+// };
+
+// let output = getLongestOfThreeWords('these', 'three', 'words');
+// console.log(output);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "findShortestOfThreeWords".
+
+// Given 3 strings, "findShortestOfThreeWords" returns the shortest of the given strings.
+
+// Notes:
+
+// If there are ties, it should return the first word in the parameters list.
+// var output = findShortestOfThreeWords('a', 'two', 'three');
+// console.log(output); // --> 'a'
+
+// function findShortestOfThreeWords(word1, word2, word3) {
+//   if (word1.length <= word2.length && word1.length <= word3.length) {
+//     return word1;
+//   } else if (word2.length < word1.length && word2.length <= word3.length) {
+//     return word2;
+//   } else {
+//     return word3;
+//   }
+// };
+
+// var output = findShortestOfThreeWords('a', 'two', 'three');
+// console.log(output);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "computeCompoundInterest".
+
+// Given a principal, an interest rate, a compounding frequency, and a time (in years), "computeCompoundInterest" returns the amount of compound interest generated.
+
+// var output = computeCompoundInterest(1500, .043, 4, 6);
+// console.log(output); // --> 438.8368221341061
+// Reference: https://en.wikipedia.org/wiki/Compound_interest#Calculation_of_compound_interest  This shows the formula used to calculate the total compound interest generated.
+
+// function computeCompoundInterest(principal, interestRate, compoundingFrequency, timeInYears) {
+//   // your code here
+//   let res = 1500 * ( 1 + (.043/4))**(4 * 6);
+//   let interest = res - 1500;
+//   return interest;
+// };
+
+// var output = computeCompoundInterest(1500, .043, 4, 6);
+// console.log(output);
+
+// P = 1500 * ( 1 + (.043/4))**(4 * 6);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
