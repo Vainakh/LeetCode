@@ -329,10 +329,46 @@
 // console.log(output); // --> [1, 4, true, false, 'x', 'y']
 // You should be familiar with the "concat" method for this problem.
 
-function joinArrayOfArrays(arr) {
-  let newArray = [].concat.apply([], arr);
-  return newArray;
+// function joinArrayOfArrays(arr) {
+//   let newArray = [].concat.apply([], arr);
+//   return newArray;
+// }
+
+// let output = [[1, 4], [true, false], ['x', 'y']];
+// console.log(joinArrayOfArrays(output));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Write a function called "getProductOfAllElementsAtProperty".
+
+// Given an object and a key, "getProductOfAllElementsAtProperty" returns the product of all the elements in the array located at the given key.
+
+// Notes:
+
+// If the array is empty, it should return 0.
+// If the property at the given key is not an array, it should return 0.
+// If there is no property at the given key, it should return 0.
+// var obj = {
+//   key: [1, 2, 3, 4]
+// };
+// var output = getProductOfAllElementsAtProperty(obj, 'key');
+// console.log(output); // --> 24
+
+function getProductOfAllElementsAtProperty(obj, key) {
+  if (!Array.isArray(obj[key]) || !obj[key] || !obj[key].length) {
+      return 0;
+      }
+      
+  var product = 1;
+  for (var i = 0; i < obj[key].length; i++) {
+      product *= obj[key][i];
+  }
+  return product;
 }
 
-let output = [[1, 4], [true, false], ['x', 'y']];
-console.log(joinArrayOfArrays(output));
+var obj = {
+    key: [1, 2, 3, 4]
+  };
+  var output = getProductOfAllElementsAtProperty(obj, 'key');
+  console.log(output);
+
