@@ -1,4 +1,4 @@
-// First, declare a variable named myArray and assign it to an empty array.
+// First, declare a variable named myarr and assign it to an empty array.
 // Now populate myArray with two strings:
 // Put your full name in the first string, and your favorite color in the second.
 // Next, declare a function named cutName. It should expect a parameter name.
@@ -390,20 +390,98 @@
 // In order to use some of the methods that will be most helpful to you, you will most likely want to do some string to number conversion and vice versa.
 // Be sure to familiarize yourself with the "toString" method, as well as the "Number" function.
 
-function sumDigits(num) {
-  let sum = 0;
-  let negative = num < 0 ? true : false;
-  num = negative ? Math.abs(num) : num;
-  while (num) {
-    if (negative && num <= 10) {
-      sum -= num % 10;
-    } else {
-      sum += num % 10;
-    }
-    num = Math.floor(num / 10);
-  }
-  return sum;
-}
+// function sumDigits(num) {
+//   let sum = 0;
+//   let negative = num < 0 ? true : false;
+//   num = negative ? Math.abs(num) : num;
+//   while (num) {
+//     if (negative && num <= 10) {
+//       sum -= num % 10;
+//     } else {
+//       sum += num % 10;
+//     }
+//     num = Math.floor(num / 10);
+//   }
+//   return sum;
+// }
 
-var output = sumDigits(-316);
+// var output = sumDigits(-316);
+// console.log(output);
+
+// Write a function called "getSumOfAllElementsAtProperty".
+
+// Given an object and a key, "getSumOfAllElementsAtProperty" returns the sum of all the elements in the array located at the given key.
+
+// Notes:
+
+// If the array is empty, it should return 0.
+// If the property at the given key is not an array, it should return 0.
+// If there is no property at the key, it should return 0.
+// var obj = {
+//   key: [4, 1, 8]
+// };
+// var output = getSumOfAllElementsAtProperty(obj, 'key');
+// console.log(output); // --> 13
+
+
+// function getSumOfAllElementsAtProperty(obj, key) {
+//   if (!Array.isArray(obj[key]) || !obj[key] || !obj[key].length) {
+//     return 0;
+//   }
+//   let sum = 0;
+//   for (let i = 0; i < obj[key].length; i ++) {
+//     sum += obj[key][i];
+//   }
+
+//   return sum;
+// }
+
+// var obj = {
+//     key: [4, 1, 8]
+//   };
+//   var output = getSumOfAllElementsAtProperty(obj, 'key');
+//   console.log(output)
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+// Write a function called "findShortestWordAmongMixedElements".
+
+// Given an array, "findShortestWordAmongMixedElements" returns the shortest string within the given array.
+
+// Notes:
+
+// If there are ties, it should return the first element to appear in the given array.
+// Expect the given array to have values other than strings.
+// If the given array is empty, it should return an empty string.
+// If the given array contains no strings, it should return an empty string.
+// var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
+// console.log(output); // --> 'two'
+
+
+function findShortestWordAmongMixedElements(arr) {
+  let shortest = null;
+  let strings = [];
+
+  if (arr.length === 0) {
+    return '';
+  }
+
+  for (let i = 0; i < arr.length; i ++) {
+    if (typeof arr[i] === 'string' || arr[i] instanceof String) {
+      strings.push(arr[i]);
+    }
+  }
+
+  if (strings.length === 0) {
+    return '';
+  }
+
+  shortest = arr.filter(el => typeof el === 'string')
+                    .reduce((a, el) => a && a.length <= el.length ? a : el, '');
+
+  return shortest;
+};
+
+var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
 console.log(output);
