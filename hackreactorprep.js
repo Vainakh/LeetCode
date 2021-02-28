@@ -459,29 +459,56 @@
 // console.log(output); // --> 'two'
 
 
-function findShortestWordAmongMixedElements(arr) {
-  let shortest = null;
-  let strings = [];
+// function findShortestWordAmongMixedElements(arr) {
+//   let shortest = null;
+//   let strings = [];
 
-  if (arr.length === 0) {
-    return '';
-  }
+//   if (arr.length === 0) {
+//     return '';
+//   }
 
-  for (let i = 0; i < arr.length; i ++) {
-    if (typeof arr[i] === 'string' || arr[i] instanceof String) {
-      strings.push(arr[i]);
-    }
-  }
+//   for (let i = 0; i < arr.length; i ++) {
+//     if (typeof arr[i] === 'string' || arr[i] instanceof String) {
+//       strings.push(arr[i]);
+//     }
+//   }
 
-  if (strings.length === 0) {
-    return '';
-  }
+//   if (strings.length === 0) {
+//     return '';
+//   }
 
-  shortest = arr.filter(el => typeof el === 'string')
-                    .reduce((a, el) => a && a.length <= el.length ? a : el, '');
+//   shortest = arr.filter(el => typeof el === 'string')
+//                     .reduce((a, el) => a && a.length <= el.length ? a : el, '');
 
-  return shortest;
-};
+//   return shortest;
+// };
 
-var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
-console.log(output);
+// var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
+// console.log(output);
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "findSmallestNumberAmongMixedElements".
+
+// Given an array of mixed elements, "findSmallestNumberAmongMixedElements" returns the smallest number within the given array.
+
+// Notes:
+
+// If the given array is empty, it should return 0.
+// If the array contains no numbers, it should return 0.
+// var output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus']);
+// console.log(output); // --> 4
+
+// function findSmallestNumberAmongMixedElements(arr) {
+//   let shortest = arr.filter(function(a) {
+//     return !isNaN(a);
+//   });
+//   if (shortest.length === 0) return 0;
+//   return Math.min.apply(null, shortest);
+
+// };
+
+// var output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus']);
+// console.log(output); // --> 4
