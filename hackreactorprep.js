@@ -512,3 +512,42 @@
 
 // var output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus']);
 // console.log(output); // --> 4
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "getLongestWordOfMixedElements".
+
+// Given an array of mixed types, "getLongestWordOfMixedElements" returns the longest string in the given array.
+
+// Notes:
+
+// If the array is empty, it should return an empty string ("").
+// If the array contains no strings; it should return an empty string.
+// var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
+// console.log(output); // --> 'word'
+
+// function getLongestWordOfMixedElements(arr) {
+//   if (arr.length === 0) {
+//     return '';
+//   }
+
+
+//   let longest = arr.filter((el) => typeof el === 'string') 
+//   if (longest.length === 0) return '';
+
+//   let word = '';
+
+//   for (let i = 0; i < longest.length; i ++) {
+//     if (longest[i].length > word.length) {
+//       word = longest[i];
+//     } else {
+//       continue;
+//     }
+//   }
+  
+//   return word;
+// };
+
+// var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
+// console.log(output)
