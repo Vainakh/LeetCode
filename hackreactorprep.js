@@ -44,6 +44,11 @@
 
 // console.log(myInfo);
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // function transformFirstAndLast(array) {
 //   let newObj = {};
 //   for (let i = 0; i < array.length; i ++) {
@@ -57,6 +62,9 @@
 
 // let array = ['Kevin', 'Bacon', 'Love', 'Hart', 'Costner', 'Coleman'];
 // console.log(transformFirstAndLast(array));
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -78,6 +86,12 @@
 
 // console.log(getAllKeys(alternativeInput));
 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // function transformArrayToObject(array) {
 //   let newObj = {};
 //   for (let i = 0; i < array.length; i ++) {
@@ -90,6 +104,11 @@
 // var input = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]];
 
 // console.log(transformArrayToObject(input));
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 // function listAllValues(obj) {
 //   let newArray = [];
@@ -106,6 +125,11 @@
 // };
 
 // console.log(listAllValues(input));
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 // function transformEmployeeData(employeeData) {
 //   var newObj = {};
@@ -138,7 +162,7 @@
 // console.log(transformEmployeeData(input));
 
 
-////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Write a function called "convertObjectToArray" which converts an object literal into an array of arrays, like this:
 
@@ -152,6 +176,9 @@
 // Return value:
 
 // [['name', 'Holly'], ['age', 35], ['role', 'producer']]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // function convertObjectToArray(obj) {
 //   let newArray = [];
@@ -173,7 +200,7 @@
 
 
 
-///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Write a function called "findShortestElement".
 
@@ -185,6 +212,12 @@
 // If the given array is empty, it should return an empty string.
 // var output = findShortestElement(['a', 'two', 'three']);
 // console.log(output); // --> 'a'
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 // function findShortestElement(arr) {
 //   let shortest = null;
@@ -207,6 +240,9 @@
 // console.log(findShortestElement(output));
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // Write a function called "filterOddLengthWords".
 
 // Given an array of strings, "filterOddLengthWords" returns an array containing only the elements of the given array whose lengths are odd numbers.
@@ -227,6 +263,11 @@
 
 // let output = ['there', 'it', 'is', 'now'];
 // console.log(filterOddLengthWords(output));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 // Write a function called "getLargestElement".
 
@@ -258,6 +299,9 @@
 // console.log(getLargestElement(output));
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // Write a function called "computeSumOfAllElements".
 
 // Given an array of numbers, "computeSumOfAllElements" returns the sum of all the elements in the given array.
@@ -276,6 +320,11 @@
 
 // let output = [1, 2, 3];
 // console.log(computeSumOfAllElements(output));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 // Write a function called "calculateBillTotal".
 
@@ -299,6 +348,11 @@
 // let output = 20;
 // console.log(calculateBillTotal(output));
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // Write a function called "getStringLength".
 
 // Given a string, "getStringLength" returns the length of the given string.
@@ -310,6 +364,8 @@
 // var output = getStringLength('hello');
 // console.log(output); // --> 5
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // function getStringLength(string) {
 //   let count = 0;
 //   while (string[count] !== undefined) 
@@ -320,6 +376,10 @@
 
 // const output = 'hello';
 // console.log(getStringLength(output));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // Write a function called "joinArrayOfArrays".
 
@@ -353,6 +413,8 @@
 // };
 // var output = getProductOfAllElementsAtProperty(obj, 'key');
 // console.log(output); // --> 24
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // function getProductOfAllElementsAtProperty(obj, key) {
 //   if (!Array.isArray(obj[key]) || !obj[key] || !obj[key].length) {
@@ -390,6 +452,11 @@
 // In order to use some of the methods that will be most helpful to you, you will most likely want to do some string to number conversion and vice versa.
 // Be sure to familiarize yourself with the "toString" method, as well as the "Number" function.
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // function sumDigits(num) {
 //   let sum = 0;
 //   let negative = num < 0 ? true : false;
@@ -408,6 +475,11 @@
 // var output = sumDigits(-316);
 // console.log(output);
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // Write a function called "getSumOfAllElementsAtProperty".
 
 // Given an object and a key, "getSumOfAllElementsAtProperty" returns the sum of all the elements in the array located at the given key.
@@ -422,6 +494,12 @@
 // };
 // var output = getSumOfAllElementsAtProperty(obj, 'key');
 // console.log(output); // --> 13
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 // function getSumOfAllElementsAtProperty(obj, key) {
@@ -457,6 +535,10 @@
 // If the given array contains no strings, it should return an empty string.
 // var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
 // console.log(output); // --> 'two'
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // function findShortestWordAmongMixedElements(arr) {
@@ -527,6 +609,11 @@
 // var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
 // console.log(output); // --> 'word'
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 // function getLongestWordOfMixedElements(arr) {
 //   if (arr.length === 0) {
 //     return '';
@@ -551,3 +638,181 @@
 
 // var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
 // console.log(output)
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "getLargestNumberAmongMixedElements".
+
+// Given any array, "getLargestNumberAmongMixedElements" returns the largest number in the given array.
+
+// Notes:
+
+// The array might contain values of a type other than numbers.
+// If the array is empty, it should return 0.
+// If the array contains no numbers, it should return 0.
+// var output = getLargestNumberAmongMixedElements([3, 'word', 5, 'up', 3, 1]);
+// console.log(output); // --> 5
+
+// function getLargestNumberAmongMixedElements(arr) {
+//   if (arr.length === 0) return 0;
+  
+//   let numbers = arr.filter((el) => typeof el === 'number') 
+//   if (numbers.length === 0) return 0;
+//   return Math.max.apply(null, numbers);
+// }
+
+// var output = getLargestNumberAmongMixedElements([3, 'word', 5, 'up', 3, 1]);
+// console.log(output);
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "computeSummationToN".
+
+// Given a number, "computeSummationToN" returns the sum of sequential numbers leading up to the given number, beginning at 0.
+
+// Notes:
+
+// If n = 4, it should calculate the sum of 1 + 2 + 3 + 4, and return 10.
+// var output = computeSummationToN(6);
+// console.log(output); // --> 21
+
+// function computeSummationToN(n) {
+//   let sum = 0;
+//   i = 0;
+//   while(i <= n) {
+//     sum += i;
+//     i++;
+//   }
+   
+//   return sum;
+// };
+
+// var output = computeSummationToN(6);
+// console.log(output);
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Write a function called "convertScoreToGrade".
+
+// Given a score, "convertScoreToGrade" returns a string representing the letter grade corresponding to the given score.
+
+// Notes:
+
+// (100 - 90) --> 'A'
+// (89 - 80) --> 'B'
+// (79 - 70) --> 'C'
+// (69 - 60) --> 'D'
+// (59 - 0) --> 'F'
+// If the given score is greater than 100 or less than 0, it should return 'INVALID SCORE'.
+// var output = convertScoreToGrade(91);
+// console.log(output); // --> 'A'
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+// function convertScoreToGrade(score) {
+//   let grade;
+
+//   switch(true) {
+//     case (score > 100):
+//         grade = 'INVALID SCORE';
+//         break; 
+//     case (score < 0):
+//         grade = 'INVALID SCORE';
+//         break;
+//     case (score >= 90):
+//        grade = 'A';
+//         break;
+//     case (score >= 80):
+//         grade = 'B';
+//          break;
+//     case (score >= 70):
+//         grade = 'C';
+//          break;
+//        case (score >= 60):
+//         grade = 'D';
+//          break;
+//     case (score >= 0):
+//         grade = 'F';
+//         break;
+//     default:
+//       return 'INVALID SCORE';
+// }
+
+//   return grade;
+// }
+
+// var output = convertScoreToGrade(101);
+// console.log(output)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// Write a function called "convertScoreToGradeWithPlusAndMinus".
+
+// Given a score, "convertScoreToGradeWithPlusAndMinus" returns a string representing the letter grade corresponding to the given score.
+
+// Notes:
+
+// (100 - 90) --> 'A'
+// (89 - 80) --> 'B'
+// (79 - 70) --> 'C'
+// (69 - 60) --> 'D'
+// (59 - 0) --> 'F'
+// If the given score is greater than 100 or less than 0, it should return 'INVALID SCORE'.
+// If the score is between the 0 and 2 (inclusive) of a given range, return the letter with a '-'
+// If the score is be the 8 and 9 (inclusive) of a given range, return the letter with a '+'
+// There are is no F+ and there is no F-.
+// var output = convertScoreToGradeWithPlusAndMinus(91);
+// console.log(output); // --> 'A-'
+
+// function convertScoreToGradeWithPlusAndMinus(score) {
+//   let grade;
+
+//   switch(true) {
+//     case (score <= 100 && score >= 90):
+//          grade = 'A';
+//          break;
+//     case (score <= 89 && score >= 80):
+//         grade = 'B';
+//          break;
+//     case (score <= 79 && score >= 70):
+//         grade = 'C';
+//          break;
+//     case (score <= 69 && score >= 60):
+//         grade = 'D';
+//         break;
+//     case (score <= 59 && score >= 0):
+//          grade = 'F';
+//          break;
+//     case (score > 100 && score < 0):
+//         grade = 'INVALID SCORE';
+//         break; 
+
+//     default:
+//       return 'INVALID SCORE';
+//   }
+
+//   let last_digit = score % 10;
+//   if (last_digit <= 2 && last_digit >= 0 && score != 100 && score > 59){
+//     grade += '-';
+//   }
+//   else if (last_digit <= 9 && last_digit >= 8 && score > 59){
+//     grade += '+';
+//   } else if (last_digit == 0 && score == 100){
+//       grade += '+';
+//   }
+//   return grade;
+// }
+
+// var output = convertScoreToGradeWithPlusAndMinus(100);
+// console.log(output);
+
+
