@@ -1152,41 +1152,47 @@
 //   // do something
 // }
 
-var customerData = {
-  'Joe': {
-    visits: 1
-  },
-  'Carol': {
-    visits: 2
-  },
-  'Howard': {
-    visits: 3,
-  },
-  'Carrie': {
-    visits: 4
-  }
-};
+// var customerData = {
+//   'Joe': {
+//     visits: 1
+//   },
+//   'Carol': {
+//     visits: 2
+//   },
+//   'Howard': {
+//     visits: 3,
+//   },
+//   'Carrie': {
+//     visits: 4
+//   }
+// };
 
-function greetCustomer(firstName) {
-  let message;
+// function greetCustomer(firstName) {
+//   let message;
   
-  for (let key in customerData) {
-    for (let value in customerData[key]) {
-      if (key === firstName && customerData[key][value] === 1) {
-        message = `Welcome back, ${firstName}! We're glad you liked us the first time!`;
-      } else if (key === firstName && customerData[key][value] > 1) {
-        message = `Welcome back, ${firstName}! So glad to see you again!`
-      } else if(!customerData[firstName]) {
-        message = 'Welcome! Is this your first time?';
-      }
-    }
-  }
+//   for (let key in customerData) {
+//     for (let value in customerData[key]) {
+//       if (key === firstName && customerData[key][value] === 1) {
+//         message = `Welcome back, ${firstName}! We're glad you liked us the first time!`;
+//       } else if (key === firstName && customerData[key][value] > 1) {
+//         message = `Welcome back, ${firstName}! So glad to see you again!`
+//       } else if(!customerData[firstName]) {
+//         message = 'Welcome! Is this your first time?';
+//       }
+//     }
+//   }
 
-  return message;
-}
+//   return message;
+// }
 
-var output = greetCustomer('Howard');
-console.log(output);
+// var output = greetCustomer('Howard');
+// console.log(output);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
