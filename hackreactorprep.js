@@ -988,12 +988,49 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 //best solution for multiply that accounts negative numbers
 
-function multiply(num1, num2) {
-  let product = num1;
-  if (num1 === 0) return 0;
-  if (num2 === 0) return num2;
+// function multiply(num1, num2) {
+//   let product = num1;
+//   if (num1 === 0) return 0;
+//   if (num2 === 0) return num2;
   
-  return num1/(1/num2);
-}
+//   return num1/(1/num2);
+// }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called "isOddWithoutModulo".
+
+// Given a number, "isOddWithoutModulo" returns whether the passed in number is odd.
+
+// Note:
+
+// It does so without using the modulo operator (%).
+// It should work for negative numbers and zero.
+// var output = isOddWithoutModulo(17);
+// console.log(output); // --> true
+
+
+// function isOddWithoutModulo(num) {
+//   if (num < 0) {
+//     num = -num;
+//   };
+//   let half = Math.floor(num / 2);
+//   for (let i = 0; i <= half; i++) {
+//     num = num - 2;
+//     if (num === 1) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
+// let output = isOddWithoutModulo(17);
+// console.log(output);
+
+
