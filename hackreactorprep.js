@@ -956,3 +956,44 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Write a function called "multiply".
+
+// Given 2 numbers, "multiply" returns their product.
+
+// Notes:
+
+// It should not use the multiply operator - *
+// var output = multiply(4, 7);
+// console.log(output); // --> 28
+
+// function multiply(num1, num2) {
+//   return ('i').repeat(num1).repeat(num2).length;
+// }
+
+// function multiply(num1, num2) {
+//   return num1/(1/num2);
+// }
+
+// function multiply(a, b){
+//   let answer = a
+//   for(var i = 0; i < b - 1; i++){
+//     answer += a
+//   }
+//   return answer
+// }
+
+// var output = multiply(4, 7);
+// console.log(output);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//best solution for multiply that accounts negative numbers
+
+function multiply(num1, num2) {
+  let product = num1;
+  if (num1 === 0) return 0;
+  if (num2 === 0) return num2;
+  
+  return num1/(1/num2);
+}
