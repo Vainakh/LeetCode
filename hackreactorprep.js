@@ -1201,30 +1201,52 @@
 // detectOutlierValue("2 4 7 8 10"); // => 3 - Third number is odd, while the rest of the numbers are even
 // detectOutlierValue("1 10 1 1");  //=> 2 - Second number is even, while the re
 
-function detectOutlierValue(string) {
-  let arr = string.split(' ');
-  let even = [];
-  let odd = [];
-  for (let i = 0; i < arr.length; i ++) {
-    let current = Number(arr[i]);
-    if (current % 2 === 0) {
-      odd.push(i + 1);
-    } else if (current % 2 !== 0){
-      even.push(i + 1);
-    }
-  }
-  if (even.length === 1) {
-    let stringed =  even.join('');
-    return parseInt(stringed);
-  } else {
-    let stringed = odd.join('');
-    return parseInt(stringed);
-  }
-}
+// function detectOutlierValue(string) {
+//   let arr = string.split(' ');
+//   let even = [];
+//   let odd = [];
+//   for (let i = 0; i < arr.length; i ++) {
+//     let current = Number(arr[i]);
+//     if (current % 2 === 0) {
+//       odd.push(i + 1);
+//     } else if (current % 2 !== 0){
+//       even.push(i + 1);
+//     }
+//   }
+//   if (even.length === 1) {
+//     let stringed =  even.join('');
+//     return parseInt(stringed);
+//   } else {
+//     let stringed = odd.join('');
+//     return parseInt(stringed);
+//   }
+// }
 
-console.log(detectOutlierValue("2 4 7 8 10")); 
-console.log(detectOutlierValue("1 10 1 1"));
+// console.log(detectOutlierValue("2 4 7 8 10")); 
+// console.log(detectOutlierValue("1 10 1 1"));
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Given a list of non-negative integers and a target sum, find a pair of numbers that sums to the target sum.
+
+// Example:
+
+// var pair = findPairForSum([3, 34, 4, 12, 5, 2], 9);
+// console.log(pair); // --> [4, 5]
+
+
+function findPairForSum(array, targetSum) {
+  for (let i = 0; i < array.length; i ++) {
+    for (let j = 0; j < array.length; j ++) {
+      if (array[i] + array[j] === targetSum) {
+        return [array[i], array[j]];
+      }
+    }
+  };
+};
+
+var pair = findPairForSum([3, 34, 4, 12, 5, 2], 9);
+console.log(pair);
 
