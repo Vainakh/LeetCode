@@ -1237,16 +1237,55 @@
 // console.log(pair); // --> [4, 5]
 
 
-function findPairForSum(array, targetSum) {
-  for (let i = 0; i < array.length; i ++) {
-    for (let j = 0; j < array.length; j ++) {
-      if (array[i] + array[j] === targetSum) {
-        return [array[i], array[j]];
-      }
-    }
-  };
-};
+// function findPairForSum(array, targetSum) {
+//   for (let i = 0; i < array.length; i ++) {
+//     for (let j = 0; j < array.length; j ++) {
+//       if (array[i] + array[j] === targetSum) {
+//         return [array[i], array[j]];
+//       }
+//     }
+//   };
+// };
 
-var pair = findPairForSum([3, 34, 4, 12, 5, 2], 9);
-console.log(pair);
+// var pair = findPairForSum([3, 34, 4, 12, 5, 2], 9);
+// console.log(pair);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Is the first input string a rotated version of the second input string?
+
+// Example:
+
+
+// var result = isRotated(string_1, string_2);
+// console.log(result); // --> true
+
+// function isRotated(str1, str2) {
+//   if (str1.length !== str2.length) return false;
+//   for (let i = 0; i < str2.length; i++) {
+//     if (str2[i] === str1[0]) {
+//     let subString1 = str2.substring(0, i);
+//     let subString2 = str2.substring(i, str2.length);
+//     let concated = subString2.concat(subString1);
+//       if (str1 === concated) {
+//         return true;
+//       }
+//     } 
+//   }
+
+//   return false;
+// };
+
+
+// var string_1 = 'hello world';
+// var string_2 = 'orldhello w';
+
+// var result = isRotated(string_1, string_2);
+// console.log(result);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
