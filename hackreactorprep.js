@@ -1333,3 +1333,62 @@
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Use the skeleton provided to complete the sum and average functions described below.
+
+// function average(numbers) {
+//   var total = sum(numbers);
+//   return total / numbers.length;
+// }
+
+// function sum(numbers) {
+//   let total = 0;
+//   for(let i = 0; i < numbers.length; i++) {
+//       total += numbers[i];
+//   }
+//   return total;
+// }
+
+// let numbers = [1, 3, 16, 22, 31, 33, 34];
+// console.log(sum(numbers));
+// console.log(average(numbers));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Your task is to write and test a function that determines whether a string is an isogram, following the format of the previous problems. It should return true if the input string is an isogram, and should return false otherwise.
+
+// While you should create your own test suite to get the most out of this exercise, there are automated tests provided as well.
+
+// Notes:
+
+// Assume your input is only letters.
+// Assume the empty string is an isogram.
+// Ignore case.
+// Follow the pseudocode exactly!
+
+
+// function isIsogram(text) {
+//   let newString = "";
+//   for (let i = 0; i <= text.length; i ++) {
+//     if (!newString.includes(text[i])) {
+//       newString += text[i];
+//     } else {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// let text = "abcdefgh";
+
+// console.log(isIsogram(text));
+
+ // add each char to a set
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+  // note: a set drops dup values
+  // thus, to see if all the chars were unique,
+  // check length of text and the size of the set
