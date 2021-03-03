@@ -1392,3 +1392,52 @@
   // note: a set drops dup values
   // thus, to see if all the chars were unique,
   // check length of text and the size of the set
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Your task is to write a function that will find the longest single-word palindrome within an input phrase (string). The phrase inputted will only contain letters (no symbols, punctuation, or numbers). Your palindrome detection should be case-insensitive. If there are multiple palindromes of equal length, return the last one.
+
+// Ideally, your solution will use a native method (built into the language) called .sort(). Essentially, when called, this method takes a function that tells the sorting operation how it should order the resulting sorted array. We have supplied a function inside of the skeleton. Please consult this MDN documentation, and read it carefully: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
+
+
+function findLongestPalindrome(sentence) {
+  let words = sentence.split(' ');
+  let palindromes = [];
+  for (let i = 0; i < words.length; i ++) {
+    let currentWord = words[i].split('').reverse().join('')
+    if (isPalindrome(currentWord)) {
+      palindromes.push(words[i]);
+    }
+  }
+
+  let sorted = palindromes.sort(sortAscendingByLength);
+  return sorted[sorted.length - 1];
+}
+
+
+function reverseString(string) {
+  let reversed = '';
+  for (let i = string.length - 1; i >= 0; i --) {
+    reversed += string[i];
+  }
+
+  return reversed;
+}
+
+function isPalindrome(word) {
+  return (reverseString(word) === word);
+}
+
+function sortAscendingByLength(a, b) {
+  if (a.length > b.length) {
+    return 1;
+  } else if (a.length < b.length) {
+    return -1;
+  }
+  return 0;
+}
+
+let sentence = 'The car industry used a new radar to measure the speed of the racecar';
+console.log(findLongestPalindrome(sentence));
