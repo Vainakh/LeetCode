@@ -1402,42 +1402,237 @@
 // Ideally, your solution will use a native method (built into the language) called .sort(). Essentially, when called, this method takes a function that tells the sorting operation how it should order the resulting sorted array. We have supplied a function inside of the skeleton. Please consult this MDN documentation, and read it carefully: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
 
 
-function findLongestPalindrome(sentence) {
-  let words = sentence.split(' ');
-  let palindromes = [];
-  for (let i = 0; i < words.length; i ++) {
-    let currentWord = words[i].split('').reverse().join('')
-    if (isPalindrome(currentWord)) {
-      palindromes.push(words[i]);
-    }
-  }
+// function findLongestPalindrome(sentence) {
+//   let words = sentence.split(' ');
+//   let palindromes = [];
+//   for (let i = 0; i < words.length; i ++) {
+//     let currentWord = words[i].split('').reverse().join('')
+//     if (isPalindrome(currentWord)) {
+//       palindromes.push(words[i]);
+//     }
+//   }
 
-  let sorted = palindromes.sort(sortAscendingByLength);
-  return sorted[sorted.length - 1];
-}
+//   let sorted = palindromes.sort(sortAscendingByLength);
+//   return sorted[sorted.length - 1];
+// }
 
 
-function reverseString(string) {
-  let reversed = '';
-  for (let i = string.length - 1; i >= 0; i --) {
-    reversed += string[i];
-  }
+// function reverseString(string) {
+//   let reversed = '';
+//   for (let i = string.length - 1; i >= 0; i --) {
+//     reversed += string[i];
+//   }
 
-  return reversed;
-}
+//   return reversed;
+// }
 
-function isPalindrome(word) {
-  return (reverseString(word) === word);
-}
+// function isPalindrome(word) {
+//   return (reverseString(word) === word);
+// }
 
-function sortAscendingByLength(a, b) {
-  if (a.length > b.length) {
-    return 1;
-  } else if (a.length < b.length) {
-    return -1;
-  }
-  return 0;
-}
+// function sortAscendingByLength(a, b) {
+//   if (a.length > b.length) {
+//     return 1;
+//   } else if (a.length < b.length) {
+//     return -1;
+//   }
+//   return 0;
+// }
 
-let sentence = 'The car industry used a new radar to measure the speed of the racecar';
-console.log(findLongestPalindrome(sentence));
+// let sentence = 'The car industry used a new radar to measure the speed of the racecar';
+// console.log(findLongestPalindrome(sentence));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Fashion Inventory - Part A
+// 42
+// Fashion Inventory Part-A
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Write a function that will take in this currentInventory array as its argument. Your function should access all the shoes across each designer and return them out in a flat list: {designer name} - {shoe name} - {price}{designer name} - {shoe name} - {price}
+
+// //...console output:
+// Brunello Cucinelli, tasselled black low-top lace-up, 1000
+// Brunello Cucinelli, tasselled green low-top lace-up, 1100
+// // and so on...
+// Here is an example of a flat list in code:
+
+// var flatList = "First line\nSecond Line\nThird Line\n";
+// console.log(flatList);
+// Observe that a "flat list" refers to a string where each new line is separated by the newline symbol. Also note that the "flat list" ends with a newline symbol. There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+// Hint: the return value is a string.
+
+// function renderInventory(inventory) {
+ 
+//   var outPutArray = '';
+ 
+//   inventory.map(items =>{
+//   for(var i = 0; i < items.shoes.length; i++){
+//     output += items.name + ' ' + items.shoes[i].name + ' ' + items.shoes[i].price + '\n';
+//   }
+//    });
+ 
+//   return outPutArray;
+// }
+
+// for (let i = 0; i < inventory.length; i ++) {
+  //   let shoes = inventory[i].shoes;
+  //   for (let j = 0; j < shoes.length; j ++) {
+  //     output += inventory[i].name + ' ' + shoes[j].name + ' ' + shoes[j].price + '\n'; 
+  //   }
+  // }
+
+
+
+// function renderInventory(inventory) {
+//   let output = '';
+//   for (let i = 0; i < inventory.length; i ++) {
+//       let shoes = inventory[i].shoes;
+//       for (let j = 0; j < shoes.length; j ++) {
+//         output += inventory[i].name + ' ' + shoes[j].name + ' ' + shoes[j].price + '\n'; 
+//       }
+//     }
+
+//   return output;
+// };
+
+// let currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
+
+//   console.log(renderInventory(currentInventory));
+
+  // var flatList = "First line\nSecond Line\nThird Line\n";
+  // console.log(flatList);
+
+//   let expected  = 'Brunello Cucinelli, tasselled black low-top lace-up, 1000, \nBrunello Cucinelli, tasselled green low-top lace-up, 1100, \nBrunello Cucinelli, plain beige suede moccasin, 950, \nBrunello Cucinelli, plain olive suede moccasin, 1050, \nGucci, red leather laced sneakers, 800, \nGucci, black leather laced sneakers, 900, \n' 
+//   // let to deeply equal 'Brunello Cucinelli, tasselled black low-top lace-up, 1000\nBrunello Cucinelli, tasselled green low-top lace-up, 1100\nBrunello Cucinelli, plain beige suede moccasin, 950\nBrunello Cucinelli, plain olive suede moccasin, 1050\nGucci, red leather laced sneakers, 800\nGucci, black leather laced sneakers, 900\n'
+// console.log(expected);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Your function should return the average cost of all shoes per designer in this format:
+
+// var expected = {
+//   'designers': [
+//     {
+//       'name': 'Brunello Cucinelli',
+//       'averagePrice': 1025
+//     },
+//     {
+//       'name': 'Gucci',
+//       'averagePrice': 850
+//     }
+//   ]
+// };
+// There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+// function calculateAveragePricePerDesigner(inventory) {
+//   let expected = {};
+//   let designers = [];
+
+//   for (var brand of inventory) {
+//     let designer = {};
+//     designer.name = brand.name;
+//     designer.averagePrice = findAveragePrice(brand.shoes);
+//     designers.push(designer);
+//   }
+
+//   function findAveragePrice(shoes) {
+//     let sum = 0;
+//     for (var shoe of shoes) {
+//       sum += shoe.price;
+//     }
+  
+//     return sum / shoes.length;
+//   }
+
+//   expected.designers = designers;
+//   return expected;
+// }
+
+
+// let currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
+
+//   console.log(calculateAveragePricePerDesigner(currentInventory));
+
+// Create helper functions if needed
