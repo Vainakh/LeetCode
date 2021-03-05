@@ -1976,24 +1976,25 @@
 // console.log(draw); // -> 'Draw!'
 
 
-function checkWinner(array) {
-  for (let i = 0; i <= array.length; i ++ ) {
-    if (array[i] === 'black' && array[i + 1] === 'black' && array[i + 2] === 'black' && array[i + 3] === 'black' ) {
-      return 'Black Win!';
-    } else if (array[i] === 'red' && array[i + 1] === 'red' && array[i + 2] === 'red' && array[i + 3] === 'red' ) {
-      return 'Red Win!';
-    } 
-  }
+// function checkWinner(array) {
+//   for (let i = 0; i <= array.length; i ++ ) {
+//     if (array[i] === 'black' && array[i + 1] === 'black' && array[i + 2] === 'black' && array[i + 3] === 'black' ) {
+//       return 'Black Win!';
+//     } else if (array[i] === 'red' && array[i + 1] === 'red' && array[i + 2] === 'red' && array[i + 3] === 'red' ) {
+//       return 'Red Win!';
+//     } 
+//   }
 
-  return 'Draw!';
-};
+//   return 'Draw!';
+// };
 
-let blackWinner = checkWinner(['black', 'red', 'black', 'black', 'black', 'black', 'red']);
-console.log(blackWinner); //-> 'Black Wins!'
+// let blackWinner = checkWinner(['black', 'red', 'black', 'black', 'black', 'black', 'red']);
+// console.log(blackWinner); //-> 'Black Wins!'
 
-let redWinner = checkWinner([0,0,0, 'red', 'red', 'red', 'red']);
-console.log(redWinner); //-> 'Red Wins!'
+// let redWinner = checkWinner([0,0,0, 'red', 'red', 'red', 'red']);
+// console.log(redWinner); //-> 'Red Wins!'
 
-let draw = checkWinner(['red', 'red', 'red', 'black', 'red', 'black', 0]);
-console.log(draw); // -> 'Draw!'
+// let draw = checkWinner(['red', 'red', 'red', 'black', 'red', 'black', 0]);
+// console.log(draw); // -> 'Draw!'
  
+
