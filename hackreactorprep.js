@@ -1637,6 +1637,7 @@
 
 // Create helper functions if needed
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -1674,40 +1675,241 @@
 // console.log(flatList);
 // Observe that a "flat list" refers to a string where each new line is separated by the newline symbol. Also note that the "flat list" ends with a newline symbol. There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
 
-function listAllBlackShoes(inventory) {
-  let output = '';
-  let code = 'black';
-  for (let i = 0; i < inventory.length; i ++ ) {
-    let currentObject = inventory[i];
-    let currentName = currentObject.name;
-    for (let j = 0; j < currentObject.shoes.length; j ++) {
-      if (currentObject.shoes[j].name.includes(code)) {
-        output += currentName + ', ' + currentObject.shoes[j].name + ', ' + currentObject.shoes[j].price + '\n';
-      };
-    };
+// function listAllBlackShoes(inventory) {
+//   let output = '';
+//   let code = 'black';
+//   for (let i = 0; i < inventory.length; i ++ ) {
+//     let currentObject = inventory[i];
+//     let currentName = currentObject.name;
+//     for (let j = 0; j < currentObject.shoes.length; j ++) {
+//       if (currentObject.shoes[j].name.includes(code)) {
+//         output += currentName + ', ' + currentObject.shoes[j].name + ', ' + currentObject.shoes[j].price + '\n';
+//       };
+//     };
+//   };
+
+//   return output;
+// };
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+
+// console.log(listAllBlackShoes(currentInventory));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Fashion Inventory - Part D
+// 45
+// Fashion Inventory Part-D
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// The task now is to find all the laced shoes, but we are going to render them in a somewhat complex format. Your function should return shoe names that contain "lace" in them, and indicate which word contains "lace". The return value's format should be structured like this:
+
+// var expectedResult = [
+//   {
+//     "nameWords": [
+//       "tasselled",
+//       "black",
+//       "low-top",
+//       "lace-up"
+//     ],
+//     "targetWordIndex": 3
+//   },
+//   {
+//     "nameWords": [
+//       "tasselled",
+//       "green",
+//       "low-top",
+//       "lace-up"
+//     ],
+//     "targetWordIndex": 3
+//   },
+//   {
+//     "nameWords": [
+//       "red",
+//       "leather",
+//       "laced",
+//       "sneakers"
+//     ],
+//     "targetWordIndex": 2
+//   },
+//   {
+//     "nameWords": [
+//       "black",
+//       "leather",
+//       "laced",
+//       "sneakers"
+//     ],
+//     "targetWordIndex": 2
+//   }
+// ];
+
+
+// function generateLaceDetails(inventory) {
+//   let laceDetails = [];
+  
+//   //iterate over inventory
+//   for (let i = 0; i < inventory.length; i ++) {
+//     let designerObject = inventory[i];
+//     let shoes = designerObject.shoes;
+//     // console.log(inventory[i].shoes);
+//     //iterate over the shoes for current designer
+//     for (let j = 0; j < shoes.length; j ++) {
+//       let currentShoe = shoes[j];
+//       // if shoe contains lace
+//       if (shoeContainsLace(currentShoe)) {
+//         let laceObj = {};
+//         //split name into array of words
+//         let nameWordsArray = currentShoe.name.split(' ');
+//         laceObj['nameWords'] = nameWordsArray;
+//         laceObj['targetWordIndex'] = getLaceIndex(nameWordsArray);
+//         laceDetails.push(laceObj);
+//       }
+//       // console.log(inventory[i].shoes[j].name);
+//       }
+//     }
+//   return laceDetails;
+// };
+
+// function shoeContainsLace(shoe) {
+//   let nameOfShoe = shoe.name;
+//   if (nameOfShoe.indexOf('lace') !== -1) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function getLaceIndex(arrayOfNameWords) {
+//   //iterate over array of name words
+//   //return index where 'lace' is found
+//   for (let i = 0; i < arrayOfNameWords.length; i ++) {
+//     if (arrayOfNameWords[i].indexOf('lace') !== -1) {
+//       return i;
+//     }
+//   }
+// };
+
+function generateLaceDetails(inventory) {
+  let expectedResults = [];
+
+  for (let i = 0; i < inventory.length; i ++) {
+    let designerObj = inventory[i];
+    let shoes = designerObj.shoes;
+    for (let j = 0; j < shoes.length; j ++) {
+      let currentShoe = shoes[j];
+      if (shoeNameLace(currentShoe)) {
+        let newObj = {};
+        let wordsArray = currentShoe.name.split(' ');
+        newObj['nameWords'] = wordsArray;
+        newObj['targetWordIndex'] = wordIndex(wordsArray);
+        expectedResults.push(newObj);
+      }
+    }
   };
 
-  return output;
+  return expectedResults;
+};
+
+function wordIndex(wordsArray) {
+  for (let i = 0; i < wordsArray.length; i ++) {
+    if (wordsArray[i].indexOf('lace') !== -1) {
+      return i;
+    }
+  }
+};
+
+function shoeNameLace(shoe) {
+  let shoeName = shoe.name;
+  if (shoeName.indexOf('lace') !== -1) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 var currentInventory = [
-  {
-    name: 'Brunello Cucinelli',
-    shoes: [
-      {name: 'tasselled black low-top lace-up', price: 1000},
-      {name: 'tasselled green low-top lace-up', price: 1100},
-      {name: 'plain beige suede moccasin', price: 950},
-      {name: 'plain olive suede moccasin', price: 1050}
-    ]
-  },
-  {
-    name: 'Gucci',
-    shoes: [
-      {name: 'red leather laced sneakers', price: 800},
-      {name: 'black leather laced sneakers', price: 900}
-    ]
-  }
-];
+    {
+      name: 'Brunello Cucinelli',
+      shoes: [
+        {name: 'tasselled black low-top lace-up', price: 1000},
+        {name: 'tasselled green low-top lace-up', price: 1100},
+        {name: 'plain beige suede moccasin', price: 950},
+        {name: 'plain olive suede moccasin', price: 1050}
+      ]
+    },
+    {
+      name: 'Gucci',
+      shoes: [
+        {name: 'red leather laced sneakers', price: 800},
+        {name: 'black leather laced sneakers', price: 900}
+      ]
+    }
+  ];
 
-console.log(listAllBlackShoes(currentInventory));
+console.log(generateLaceDetails(currentInventory));
+
+  // console.log(generateLaceDetails(currentInventory));
+
+// var expectedResult = [
+  //   {
+  //     "nameWords": [
+  //       "tasselled",
+  //       "black",
+  //       "low-top",
+  //       "lace-up"
+  //     ],
+  //     "targetWordIndex": 3
+  //   },
+  //   {
+  //     "nameWords": [
+  //       "tasselled",
+  //       "green",
+  //       "low-top",
+  //       "lace-up"
+  //     ],
+  //     "targetWordIndex": 3
+  //   },
+
+
+
+
 
