@@ -416,12 +416,12 @@
 // var output = calculateBillTotal(20);
 // console.log(output); // --> 24.9
 
-function calculateBillTotal() {
+// function calculateBillTotal() {
 
-};
+// };
 
-var output = calculateBillTotal(20);
-console.log(output);
+// var output = calculateBillTotal(20);
+// console.log(output);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -466,40 +466,578 @@ console.log(output);
 // Hint: the return value is a string.
 
 
-function flatListedObject(inventory) {
-  let flatten = [];
-  for (let i = 0; i < inventory.length; i ++) {
-    let designerObject = inventory[i];
-    let name = designerObject.name;
-    for (let y = 0; y < designerObject.shoes.length; y ++) {
-      let shoeName = designerObject.shoes[y].name
-      let shoePrice = designerObject.shoes[y].price
-      let flatList = name + ', ' + shoeName + ', ' + shoePrice + '\n';
-      flatten += flatList;
-    }
-  }
+// function flatListedObject(inventory) {
+//   let flatten = [];
+//   for (let i = 0; i < inventory.length; i ++) {
+//     let designerObject = inventory[i];
+//     let name = designerObject.name;
+//     for (let y = 0; y < designerObject.shoes.length; y ++) {
+//       let shoeName = designerObject.shoes[y].name
+//       let shoePrice = designerObject.shoes[y].price
+//       let flatList = name + ', ' + shoeName + ', ' + shoePrice + '\n';
+//       flatten += flatList;
+//     }
+//   }
 
-  return flatten;
-};
+//   return flatten;
+// };
 
-var currentInventory = [
-    {
-      name: 'Brunello Cucinelli',
-      shoes: [
-        {name: 'tasselled black low-top lace-up', price: 1000},
-        {name: 'tasselled green low-top lace-up', price: 1100},
-        {name: 'plain beige suede moccasin', price: 950},
-        {name: 'plain olive suede moccasin', price: 1050}
-      ]
-    },
-    {
-      name: 'Gucci',
-      shoes: [
-        {name: 'red leather laced sneakers', price: 800},
-        {name: 'black leather laced sneakers', price: 900}
-      ]
-    }
-  ];
+// var currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
 
-console.log(flatListedObject(currentInventory));
+// console.log(flatListedObject(currentInventory));
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Your function should return the average cost of all shoes per designer in this format:
+
+// var expected = {
+//   'designers': [
+//     {
+//       'name': 'Brunello Cucinelli',
+//       'averagePrice': 1025
+//     },
+//     {
+//       'name': 'Gucci',
+//       'averagePrice': 850
+//     }
+//   ]
+// };
+// There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+
+// function calculateAveragePricePerDesigner(inventory) {
+//   let newObj = {};
+//   let designers = [];
+//   for (let i = 0; i < inventory.length; i ++) {
+//         let designer = {};
+//         let current = inventory[i];
+    
+//     designer.name = current.name;
+//     designer.avaragePrice = findAveragePrice(current.shoes);
+//     designers.push(designer);
+//   }
+
+//   function findAveragePrice(shoes) {
+//     let sum = 0;
+//     for (let i = 0; i < shoes.length; i ++) {
+//       let shoe = shoes[i];
+//       sum += shoe.price;
+//     }
+  
+//     return sum / shoes.length;
+//   }
+
+//   newObj.designers = designers; 
+//   return newObj;
+
+// };
+
+
+// function findAveragePrice(shoes) {
+//   let sum = 0;
+//   for (let i = 0; i < shoes.length; i ++) {
+//     let shoe = shoes[i];
+//     sum += shoe.price;
+//   }
+
+//   return sum / shoes.length;
+// }
+
+// let shoes = [
+//     {name: 'tasselled black low-top lace-up', price: 1000},
+//     {name: 'tasselled green low-top lace-up', price: 1100},
+//     {name: 'plain beige suede moccasin', price: 950},
+//     {name: 'plain olive suede moccasin', price: 1050}
+//   ];
+
+  // for (let i = 0; i < shoes.length; i ++) {
+  //   console.log(shoes[i].price)
+  // }
+
+//   for (var shoe of shoes) {
+//     console.log(shoe.price);
+//   }
+
+// console.log(findAveragePrice(shoes));
+
+  
+
+// let expected = {};
+//   let designers = [];
+
+//   for (var brand of inventory) {
+//     let designer = {};
+//     designer.name = brand.name;
+//     designer.averagePrice = findAveragePrice(brand.shoes);
+//     designers.push(designer);
+//   }
+
+//   function findAveragePrice(shoes) {
+//     let sum = 0;
+//     for (var shoe of shoes) {
+//       sum += shoe.price;
+//     }
+  
+//     return sum / shoes.length;
+//   }
+
+//   expected.designers = designers;
+//   return expected;
+
+
+
+// var currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
+
+// console.log(renderObjectAvgPrice(currentInventory));
+
+// var expected = {
+//   'designers': [
+//     {
+//       'name': 'Brunello Cucinelli',
+//       'averagePrice': 1025
+//     },
+//     {
+//       'name': 'Gucci',
+//       'averagePrice': 850
+//     }
+//   ]
+// };
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Fashion Inventory Part-C
+// Submitted on Yesterday at 12:17 PM
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Your task is to find all of the shoes with "black" in the name. Your function should filter these shoes, and return them in a "flat list" similarly to Part A. Here is an example of the console output:
+
+// Brunello Cucinelli, tasselled black low-top lace-up, 1000
+// Gucci, black leather laced sneakers, 900
+// Here is an example of a flat list in code:
+
+// var flatList = "First line\nSecond Line\nThird Line\n";
+// console.log(flatList);
+// Observe that a "flat list" refers to a string where each new line is separated by the newline symbol. Also note that the "flat list" ends with a newline symbol. There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function listBlackShoes(inventory) {
+//   let code = 'black';
+//   let flatList = '';
+//   for (let designer of inventory) {
+//     let name = designer.name;
+//     for (let shoe of designer.shoes) {
+//       if (shoe.name.includes('black')) {
+//         let shoeName = shoe.name;
+//         let shoePrice = shoe.price;
+//         flatList += name + ' ,' + shoeName + ' ,' + shoePrice + '\n';
+//       } 
+//     }
+//   }
+
+//   return flatList;
+// };
+
+// var currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
+
+// // console.log(listBlackShoes(currentInventory));
+
+// listBlackShoes(currentInventory);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// The task now is to find all the laced shoes, but we are going to render them in a somewhat complex format. Your function should return shoe names that contain "lace" in them, and indicate which word contains "lace". The return value's format should be structured like this:
+
+// var expectedResult = [
+//   {
+//     "nameWords": [
+//       "tasselled",
+//       "black",
+//       "low-top",
+//       "lace-up"
+//     ],
+//     "targetWordIndex": 3
+//   },
+//   {
+//     "nameWords": [
+//       "tasselled",
+//       "green",
+//       "low-top",
+//       "lace-up"
+//     ],
+//     "targetWordIndex": 3
+//   },
+//   {
+//     "nameWords": [
+//       "red",
+//       "leather",
+//       "laced",
+//       "sneakers"
+//     ],
+//     "targetWordIndex": 2
+//   },
+//   {
+//     "nameWords": [
+//       "black",
+//       "leather",
+//       "laced",
+//       "sneakers"
+//     ],
+//     "targetWordIndex": 2
+//   }
+// ];
+
+// function findLaceShoes(inventory) {
+//   let expected = [];
+//   for (let designer of inventory) {
+//     for (let i = 0; i < designer.shoes.length; i ++) {
+//       let currentShoeName = designer.shoes[i].name;
+//       if (shoeNameContains(currentShoeName)) {
+//         let newObj = {};
+//         let lacedString = currentShoeName.split(' ');
+//         newObj['nameWords'] = lacedString;
+//         newObj['targetWordIndex'] = findIndex(lacedString);
+//         expected.push(newObj);
+//       } 
+//     }
+//   }
+  
+//   return expected;
+// }
+
+// function shoeNameContains(currentShoeName) {
+//   if (currentShoeName.indexOf('lace') !== -1) {
+//     return true;
+//   } 
+//   return false;
+// };
+
+// function findIndex(lacedString) {
+//   for (let i = 0; i < lacedString.length; i ++) {
+//     if (lacedString[i].indexOf('lace') !== -1) {
+//       return i;
+//     } 
+//   }
+// }
+
+
+// var currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
+
+//   console.log(findLaceShoes(currentInventory));
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// A Request From Corporate
+// Let us walk through the idea for this problem, as it is somewhat more complex than usual. The problem will require you to write two functions. One function will accomplish a task of some kind, and the other function will be an assertion function which can be used to compare your answer with an expected answer.
+
+// The first function you will write will be called generateSampleView. The input for this function will always be an array of objects, theoretically the result of a call to an API, or database. generateSampleView will take this array as its parameter, and return an array of strings based upon conditions that we will describe in a moment. The format of this input array of objects is described below:
+
+// var users = [
+//   {
+//     "id": 1,
+//     "name": "Leanne Graham",
+//     "username": "Bret",
+//     "email": "Sincere@april.biz",
+//     "address": {
+//       "street": "Kulas Light",
+//       "suite": "Apt. 556",
+//       "city": "Gwenborough",
+//       "zipcode": "92998-3874",
+//       "geo": {
+//         "lat": "-37.3159",
+//         "lng": "81.1496"
+//       }
+//     },
+//     "phone": "1-770-736-8031 x56442",
+//     "website": "hildegard.org",
+//     "company": {
+//       "name": "Romaguera-Crona",
+//       "catchPhrase": "Multi-layered client-server neural-net",
+//       "bs": "harness real-time e-markets"
+//     }
+//   },
+//   {
+//     "id": 2,
+//     "name": "Ervin Howell",
+//     "username": "Antonette",
+//     "email": "Shanna@melissa.tv",
+//     "address": {
+//       "street": "Victor Plains",
+//       "suite": "Suite 879",
+//       "city": "Wisokyburgh",
+//       "zipcode": "90566-7771",
+//       "geo": {
+//         "lat": "-43.9509",
+//         "lng": "-34.4618"
+//       }
+//     },
+//     "phone": "010-692-6593 x09125",
+//     "website": "anastasia.net",
+//     "company": {
+//       "name": "Deckow-Crist",
+//       "catchPhrase": "Proactive didactic contingency",
+//       "bs": "synergize scalable supply-chains"
+//     }
+//   }
+// ];
+// Note: your function will be tested with a longer input, but the format will remain consistent for each user in the input array.
+
+// Your function should examine each user object, and add to the array return value for this function one of the following:
+
+// If the value of the id property is odd, add the user's email to the return array
+// If the value of the id property is even, your function should create a new string for the given user, add the street, suite, city, and zipcode, each separated by a space and a comma, as one string, to the return array
+// Thus, if our input was the users array listed above, our output would be:
+
+// var output = ["Sincere@april.biz", "Victor Plains, Suite 879, Wisokyburgh, 90566-7771"];
+
+// The second function you will write will be called assertArraysEqual. It will be a function that takes three parameters: actual will be an array of scalar values, and should ideally be the result of calling a function that you are testing. (presumably the function being tested should return an array of scalar values); expected, also an array of scalar values, should be the theoretical result of calling your function (or, what you "expect" the function to return). Finally, testName will be a string, and should describe what a call to assertArraysEqual is verifying about the function being tested.
+
+// Please DO NOT USE JSON.stringify(), Array.join(), or any other "convert both arrays to strings so I can compare two strings" type of technique to implement this.
+
+// There are typically two things that we must check in order to determine that two arrays of scalar values are indeed equal to one another. Do they have the same length, and do they contain the same values. Thus, your function must make a determination about these issues, then either log 'passed' to the console or else 'failed', as well as the testName to the console. The tests for this function will check to see if your console.log message for a passing case contains 'passed', and 'failed' for a failing case (both in lower case).
+
+// var output = ["Sincere@april.biz", "Victor Plains, Suite 879, Wisokyburgh, 90566-7771"];
+
+// write both functions from scratch
+
+
+// If the value of the id property is odd, add the user's email to the return array
+// If the value of the id property is even, your function should create a new string for the given user, add the street, suite, city, and zipcode, each separated by a space and a comma, as one string, to the return array
+// Thus, if our input was the users array listed above, our output would be:
+
+// function generateSampleView(array) {
+//   let output = [];
+//   for (let userObject of array) {
+//     if (userObject["id"] % 2 !== 0) {
+//       let userEmail = userObject["email"];
+//       output.push(userEmail);
+//     }  else {
+//       let userStreet = userObject.address.street;
+//       let userSuite = userObject.address.suite;
+//       let userCity = userObject.address.city;
+//       let userZip = userObject.address.zipcode;
+//       let userInfo = userStreet + ', ' + userSuite + ', ' + userCity + ', ' + userZip;
+//       output.push(userInfo);
+//     }  
+//   }
+
+//   return output;
+// };
+
+// function assertArraysEqual(actual, expected, testName ) {
+//   let sameLength = actual.length === expected.length;
+//   let sameValue = true;
+//   for (let i = 0; i < actual.length; i ++) {
+//     if (actual[i] !== expected[i]) {
+//       sameValues = false;
+//       break;
+//     }
+//   }
+
+//   if (sameValue && sameLength) {
+//     return console.log("passed");
+//   } else {
+//     return console.log("failed" + '[' + testName + ']');
+//   }
+// };
+
+// var users = [
+//     {
+//       "id": 1,
+//       "name": "Leanne Graham",
+//       "username": "Bret",
+//       "email": "Sincere@april.biz",
+//       "address": {
+//         "street": "Kulas Light",
+//         "suite": "Apt. 556",
+//         "city": "Gwenborough",
+//         "zipcode": "92998-3874",
+//         "geo": {
+//           "lat": "-37.3159",
+//           "lng": "81.1496"
+//         }
+//       },
+//       "phone": "1-770-736-8031 x56442",
+//       "website": "hildegard.org",
+//       "company": {
+//         "name": "Romaguera-Crona",
+//         "catchPhrase": "Multi-layered client-server neural-net",
+//         "bs": "harness real-time e-markets"
+//       }
+//     },
+//     {
+//       "id": 2,
+//       "name": "Ervin Howell",
+//       "username": "Antonette",
+//       "email": "Shanna@melissa.tv",
+//       "address": {
+//         "street": "Victor Plains",
+//         "suite": "Suite 879",
+//         "city": "Wisokyburgh",
+//         "zipcode": "90566-7771",
+//         "geo": {
+//           "lat": "-43.9509",
+//           "lng": "-34.4618"
+//         }
+//       },
+//       "phone": "010-692-6593 x09125",
+//       "website": "anastasia.net",
+//       "company": {
+//         "name": "Deckow-Crist",
+//         "catchPhrase": "Proactive didactic contingency",
+//         "bs": "synergize scalable supply-chains"
+//       }
+//     }
+//   ];
+
+// console.log(generateSampleView(users));
+// let actual_1 = generateSampleView(users);
+// let expected_1 = ["Sincere@april.biz", "Victor Plains, Suite 879, Wisokyburgh, 90566-7771"];
+// assertArraysEqual(actual_1, expected_1, "creates the correct sample view")
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
