@@ -1099,40 +1099,406 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function splitPairs(input) {
-  let newString = [];
+// function splitPairs(input) {
+//   let newString = [];
 
-  if (input.length === 0) return []
+//   if (input.length === 0) return []
 
-  for (let i = 0; i < input.length; i += 2) {
-    let first = input[i];
-    let second = input[i + 1];
-    if (first && second) {
-      newString.push(first + second);
+//   for (let i = 0; i < input.length; i += 2) {
+//     let first = input[i];
+//     let second = input[i + 1];
+//     if (first && second) {
+//       newString.push(first + second);
       
-    } else if ( first && !second) {
-      newString.push(first + '_');
+//     } else if ( first && !second) {
+//       newString.push(first + '_');
     
-    }
-  }
+//     }
+//   }
 
-  return newString;
-}
+//   return newString;
+// }
 
-let input = 'abshdnca';
+// let input = 'abshdnca';
 
-console.log(splitPairs(input));
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
+// console.log(splitPairs(input));
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Given a string of words, you need to find the highest scoring word.
+
+// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+// You need to return the highest scoring word as a string.
+
+// If two words score the same, return the word that appears earliest in the original string.
+
+// All letters will be lowercase and all inputs will be valid.
+
+
+// function highestScoringWord(string) {
+//   let alphabet = "abcdefghijklmnopqrstuvwxyz";
+//   let sum = 0;
+//   let currentWordSum = 0;
+
+//   for (let i = 0; i < string.length; i ++) {
+//     for (let y = 0; y < string[i].length; y ++) {
+//       let currentCharScore = alphabet.indexOf(string[i][y]);
+//       console.log(currentCharScore + 1)
+//       currentWordSum += currentCharScore + 1;
+//     }
+//   }
+  
+//   if (currentWordSum > sum) {
+//     sum = currentWordSum;
+//   }
+
+//   console.log(currentWordSum)
+//   return sum;
+// };
+
+// let input = 'taxi';
+// //taxi =148,volcano=308,semynak=159
+// console.log(highestScoringWord(input));
+
+// function high(x){
+//   // 1. split x by ' ' to an array.
+//   const wordList = x.split(' ');
+  
+//   // 2. calculate each word score to another array.
+//   const getScore = (word) => {
+//     return word.split('').reduce((prevScore, currWord) => prevScore + currWord.charCodeAt(0) - 96, 0)
+//   }
+//   const scoreList = wordList.map(word => getScore(word));
+
+//   // 3. get the highest score and index
+//   let highestIndex = 0;
+//   let highestScore = 0;
+//   scoreList.forEach((score, i) => {
+//     if (score > highestScore) {
+//       highestIndex = i;
+//       highestScore = score;
+//     }
+//   });
+  
+//   // 4. return the string of the highest score index of wordList
+//   return wordList[highestIndex];
+// }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// Input1: "http://github.com/carbonfive/raygun  " Output1: "github"
+
+// Input2: "http://www.zombie-bites.com  " Output2: "zombie-bites"
+
+// Input3: "https://www.cnet.com  " Output3: "cnet"
+
+
+// function getDomain(url) {
+//   let name = '';
+//   if (url.indexOf('//') > -1) {
+//     name = url.split('/')[2];
+//   } else {
+//     name = url.split('/')[0];
+//   }
+
+//   if (url.indexOf('www.') > -1) {
+//     name = url.split('www.')[1];
+//   } 
+  
+//   name = name.split('.')[0];
+
+//   return name;
+// }
+
+// let input3 = "https://www.cnet.com  "; //Output3: "cnet";
+// let input = 'youtube.com';
+
+// console.log(getDomain(input));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Fashion Inventory Part-A
+// Submitted on Last Friday at 3:37 PM
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Write a function that will take in this currentInventory array as its argument. Your function should access all the shoes across each designer and return them out in a flat list: {designer name} - {shoe name} - {price}{designer name} - {shoe name} - {price}
+
+// //...console output:
+// Brunello Cucinelli, tasselled black low-top lace-up, 1000
+// Brunello Cucinelli, tasselled green low-top lace-up, 1100
+// // and so on...
+// Here is an example of a flat list in code:
+
+// var flatList = "First line\nSecond Line\nThird Line\n";
+// console.log(flatList);
+// Observe that a "flat list" refers to a string where each new line is separated by the newline symbol. Also note that the "flat list" ends with a newline symbol. There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+// Hint: the return value is a string.
+
+
+// function renderInventory(inventory) {
+//   let output = '';
+
+//   for (let designer of inventory) {
+//     let designerName = designer.name;
+//     for (let shoe of designer.shoes) {
+//       let shoeName = shoe.name;
+//       let shoePrice = shoe.price;
+//       output += designerName + ', ' + shoeName + ', ' +
+//       shoePrice + '\n';
+//     }
+//   }
+
+//   return output;
+// };
+
+// let currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+
+// console.log(renderInventory(currentInventory));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Your function should return the average cost of all shoes per designer in this format:
+
+// var expected = {
+//   'designers': [
+//     {
+//       'name': 'Brunello Cucinelli',
+//       'averagePrice': 1025
+//     },
+//     {
+//       'name': 'Gucci',
+//       'averagePrice': 850
+//     }
+//   ]
+// };
+// There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+
+// function calculateAveragePricePerDesigner(inventory) {
+//   let expected = {};
+//   let designers = [];
+
+//   for (let brand of inventory) {
+//     let designer = {};
+//     designer.name = brand.name;
+//     let designerShoes = brand.shoes;
+//     designer.averagePrice = findAveragePrice(designerShoes);
+//     designers.push(designer);
+//   }
+
+//     function findAveragePrice(array) {
+//       let sum = 0;
+//       for (let shoe in array) {
+//         let shoePrice = array[shoe].price;
+//         sum += shoePrice;
+//       }
+    
+//       return sum / array.length;
+//     }
+
+//     expected.designers = designers;
+//     return expected;
+// };
+// // let array = [
+// //         {name: 'tasselled black low-top lace-up', price: 1000},
+// //         {name: 'tasselled green low-top lace-up', price: 1100},
+// //         {name: 'plain beige suede moccasin', price: 950},
+// //         {name: 'plain olive suede moccasin', price: 1050}
+// //       ]
+
+// // console.log(averagePrice(array));
+
+// let currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ];
+
+//   console.log(calculateAveragePricePerDesigner(currentInventory));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Fashion Inventory Part-C
+// Submitted on Last Friday at 6:13 PM
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Your task is to find all of the shoes with "black" in the name. Your function should filter these shoes, and return them in a "flat list" similarly to Part A. Here is an example of the console output:
+
+// Brunello Cucinelli, tasselled black low-top lace-up, 1000
+// Gucci, black leather laced sneakers, 900
+// Here is an example of a flat list in code:
+
+// var flatList = "First line\nSecond Line\nThird Line\n";
+// console.log(flatList);
+// Observe that a "flat list" refers to a string where each new line is separated by the newline symbol. Also note that the "flat list" ends with a newline symbol. There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+
+// function listAllBlackShoes(inventory) {
+//   let expected = {};
+//   let shoes = '';
+//   for (let designer of inventory) {
+//     let designerName = designer.name;
+//     for (let shoe of designer.shoes) {
+//       if (shoe.name.includes('black')) {
+//         let shoeName = shoe.name;
+//         let shoePrice = shoe.price
+//         shoes += designerName + ', ' + shoeName + ', ' + shoePrice + '\n';
+//       }
+//     }
+//   }
+
+//   return shoes;
+// };
+
+// function listAllBlackShoes(inventory) {
+  //   let code = 'black';
+  //   let flatList = '';
+  //   for (let designer of inventory) {
+  //     let name = designer.name;
+  //     for (let shoe of designer.shoes) {
+  //       if (shoe.name.includes('black')) {
+  //         let shoeName = shoe.name;
+  //         let shoePrice = shoe.price;
+  //         flatList += name + ', ' + shoeName + ', ' + shoePrice + '\n';
+  //       } 
+  //     }
+  //   }
+  
+  //   return flatList;
+  // };
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+
+// console.log(listAllBlackShoes(currentInventory));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
