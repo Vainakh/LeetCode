@@ -1756,23 +1756,43 @@
 
 
 
-function highestScoringWord(string) {
-  let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  let currentWordSum = 0;
+// function highestScoringWord(string) {
+//   let newArray = string.split(' ');
+//   let alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
+//   let sum = 0;
+//   let topScoreWord = '';
+//   for (let i = 0; i < newArray.length; i ++) {
+//     let currentWordSum = 0;
+//     let currentWord = '';
+//     for (let y = 0; y < newArray[i].length; y ++) {
+//       let currentCharScore = alphabet.indexOf(newArray[i][y]);
+//       currentWordSum += currentCharScore + 1;
+//       currentWord = newArray[i];
+//     } 
 
-  let newArray = string.split(' ');
-  for (let word of newArray) {
-    for (let letter of word) {
-      let currentCharScore = alphabet.indexOf(string[i][y]);
-      currentWordSum += currentCharScore + 1;
-    }
-  }
+//     if (currentWordSum > sum) {
+//       sum = currentWordSum;
+//       topScoreWord = currentWord;
+//     }
+//   }
 
-  return currentWordSum;
-};
+//   return topScoreWord;
+// };
 
-let string1 = 'man i need a taxi up to ubud';
-let string2 = 'what time are we climbing up the volcano';
-let string3 = 'take me to semynak';
+// let string1 = 'man i need a taxi up to ubud';
+// let string2 = 'what time are we climbing up the volcano';
+// let string3 = 'take me to semynak';
 
-console.log(highestScoringWord(string1));
+// console.log(highestScoringWord(string3));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
