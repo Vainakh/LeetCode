@@ -1497,9 +1497,282 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// The task now is to find all the laced shoes, but we are going to render them in a somewhat complex format. Your function should return shoe names that contain "lace" in them, and indicate which word contains "lace". The return value's format should be structured like this:
+
+// function generateLaceDetails(inventory) {
+//   let expected = [];
+//   for (let designer of inventory) {
+//     let designerName = designer.name;
+//     let designerShoes = designer.shoes;
+//     for (let shoe of designerShoes) {
+//       if (wordIncludesString(shoe)) {
+//         let newObj = {};
+//         let words = shoe.name.split(' ');
+//         newObj['nameWords'] = words;
+//         newObj['targetWordIndex'] = getIndex(words);
+//         expected.push(newObj);
+//       } 
+//     }
+//   }
+
+//   return expected;
+// };
+
+// function wordIncludesString(shoe) {
+//   let shoeName = shoe.name;
+//   if (shoeName.indexOf('lace') !== -1) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// function getIndex(words) {
+//   for (let i = 0; i < words.length; i ++) {
+//     if (words[i].indexOf('lace') !== -1) {
+//       return i;
+//     }
+//   }
+// };
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+
+// console.log(generateLaceDetails(currentInventory))
+
+// var expectedResult = [
+//   {
+//     "nameWords": [
+//       "tasselled",
+//       "black",
+//       "low-top",
+//       "lace-up"
+//     ],
+//     "targetWordIndex": 3
+//   },
+//   {
+//     "nameWords": [
+//       "tasselled",
+//       "green",
+//       "low-top",
+//       "lace-up"
+//     ],
+//     "targetWordIndex": 3
+//   },
+//   {
+//     "nameWords": [
+//       "red",
+//       "leather",
+//       "laced",
+//       "sneakers"
+//     ],
+//     "targetWordIndex": 2
+//   },
+//   {
+//     "nameWords": [
+//       "black",
+//       "leather",
+//       "laced",
+//       "sneakers"
+//     ],
+//     "targetWordIndex": 2
+//   }
+// ];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// You have a fashion catalog, an inventory of items from various high-fashion designers. Each designer has a lineup of shoes. Each shoe has a name and a price.
+
+// It looks like this:
+
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
+// Your task is to find all of the shoes with "black" in the name. Your function should filter these shoes, and return them in a "flat list" similarly to Part A. Here is an example of the console output:
+
+// Brunello Cucinelli, tasselled black low-top lace-up, 1000
+// Gucci, black leather laced sneakers, 900
+// Here is an example of a flat list in code:
+
+// var flatList = "First line\nSecond Line\nThird Line\n";
+// console.log(flatList);
+// Observe that a "flat list" refers to a string where each new line is separated by the newline symbol. Also note that the "flat list" ends with a newline symbol. There are, like all of the challenges in this course, tests attached to these exercises. However, in order to get the most effective practice, please continue to write your own unit tests.
+
+
+// function listAllBlackShoes(inventory) {
+//   let expected = [];
+//   for ( let designer of inventory) {
+//     let desingerName = designer.name;
+//     let shoes = designer.shoes;
+//     for (let shoe of shoes) {
+//       let shoeName = shoe.name;
+//       if (isContainString(shoeName)) {
+//         expected += desingerName + ', ' + shoeName + ', ' + shoe.price + '\n';
+//        }
+//     }
+//   }
+
+//   return expected;
+// };
+
+// function isContainString(shoeName) {
+//   if (shoeName.indexOf('black') !== -1) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// var currentInventory = [
+//     {
+//       name: 'Brunello Cucinelli',
+//       shoes: [
+//         {name: 'tasselled black low-top lace-up', price: 1000},
+//         {name: 'tasselled green low-top lace-up', price: 1100},
+//         {name: 'plain beige suede moccasin', price: 950},
+//         {name: 'plain olive suede moccasin', price: 1050}
+//       ]
+//     },
+//     {
+//       name: 'Gucci',
+//       shoes: [
+//         {name: 'red leather laced sneakers', price: 800},
+//         {name: 'black leather laced sneakers', price: 900}
+//       ]
+//     }
+//   ]; 
+
+//   console.log(listAllBlackShoes(currentInventory));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Given a string of words, you need to find the highest scoring word.
+
+// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+// You need to return the highest scoring word as a string.
+
+// If two words score the same, return the word that appears earliest in the original string.
+
+// All letters will be lowercase and all inputs will be valid.
+
+
+
+// function highestScoringWord(string) {
+//   let alphabet = "abcdefghijklmnopqrstuvwxyz";
+//   let sum = 0;
+//   let word = '';
+//   let currentWordSum = 0;
+//   let currentWord = '';
+  
+
+//   for (let i = 0; i < string.length; i ++) {
+//     // console.log(string[i])
+    
+//     for (let y = 0; y < string[i].length; y ++) {
+//       let currentCharScore = alphabet.indexOf(string[i][y]);
+//       currentWordSum += currentCharScore + 1;
+      
+//     } 
+//   }
+
+//   if (currentWordSum >= sum) {
+//     sum = currentWordSum;
+//   }
+  
+  
+
+//   console.log(currentWordSum)
+//   return word;
+// };
+
+
+// function highestScoringWord(string) {
+
+
+// };
+
+
+// let string1 = 'man i need a taxi up to ubud';
+// let string2 = 'what time are we climbing up the volcano';
+// let string3 = 'take me to semynak';
+
+// console.log(highestScoringWord(string1));
+
+
+
+function highestScoringWord(string) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let currentWordSum = 0;
+
+  let newArray = string.split(' ');
+  for (let word of newArray) {
+    for (let letter of word) {
+      let currentCharScore = alphabet.indexOf(string[i][y]);
+      currentWordSum += currentCharScore + 1;
+    }
+  }
+
+  return currentWordSum;
+};
+
+let string1 = 'man i need a taxi up to ubud';
+let string2 = 'what time are we climbing up the volcano';
+let string3 = 'take me to semynak';
+
+console.log(highestScoringWord(string1));
