@@ -1788,11 +1788,120 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// function indexOfString(string1, string2) {
+//   if (!string1.indexOf(string2)) {
+//     return -1;
+//   } else {
+//     return string1.indexOf(string2);
+//   }
+// };
+
+// var output = indexOfString("environment", "iron");
+// console.log(output); // 3
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// function removeFromBack(arr) {
+//   arr.pop();
+//   return arr;
+// }
+
+// var output = removeFromBack([1, 2, 3]);
+// console.log(output); // --> [1, 2]
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// function removeFromFront(arr) {
+//   arr.shift();
+//   return arr;
+// }
+
+
+// var output = removeFromFront([1, 2, 3]);
+// console.log(output); // --> [2, 3]
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// function useSlice(array, start, end) {
+//   let sliced = array.slice(start, end);
+//   return sliced;
+// };
+
+// let array = [1, 2, 3, 4];
+// let start = array[0];
+// let end = array[array.length - 1];
+// console.log(useSlice(array, start, end));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// function usingSplice(array, start, deleteCount, item) {
+//   let spliced = array.splice(start, deleteCount, item);
+//   return spliced;
+// };
+
+// let array = [1, 2, 3, 4, 5];
+// let start = array[0];
+// let deleteCount = 2;
+// let item = 'inserted';
+
+// console.log(usingSplice(array, start, deleteCount, item));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Complete the function indexOfArray. This function will take in two parameters, an array and an element, and returns the index, inside of the array, where the element is located. You will want to use the indexOf method for Arrays. If the element is not present within array, your function should return -1.
+
+
+// function indexOfArray(array, item) {
+//   for (let i = 0; i < array.length; i ++) {
+//     if (array.indexOf(item) !== -1) {
+//       return array.indexOf(item);
+//     }
+//   }
+
+//   return -1;
+// }
+
+// let array = [1, 2, 3, 4, 5];
+// let item = 3;
+
+// console.log(indexOfArray(array, item));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Complete a function that takes in two parameters, an array and a string. Your function should call join on the input array with an argument of the input string, and return the results.
+
+// function useJoin(array, string) {
+//   let joined = array.join(string);
+//   return joined;
+// };
+
+// let array = ["a", "b", "c"];
+// let string = 'string';
+
+// console.log(useJoin(array, string));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Complete a function that takes in three parameters, an object, and a string (which will represent a key), and a value. Your function should add a property to the inputted object. The key of this property should be the inputted string parameter, and the value of this property should be the inputted value. Your function should then return the inputted object.
+
+// function addProperty(obj, key, value) {
+//   obj[key] = value;
+//   return obj;
+// };
+
+// let obj = {};
+// let key = "hello";
+// let value = 20;
+
+// console.log(addProperty(obj, key, value));
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
