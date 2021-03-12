@@ -1905,3 +1905,42 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Complete a function that takes in two parameters, an object, and a string (which will represent a key). Your function should remove (delete) the property located at the inputted key. Your function should then return the inputted object.
+
+
+// function removeProperty(obj, key) {
+//   obj[key] = 0;
+//   delete obj[key];
+//   return obj;
+// };
+
+// let obj = {};
+// let key = "string";
+
+// console.log(removeProperty(obj, key));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Complete a function that takes in one parameter, an object. Your function should iterate over the object, and log the values to the console. Your function need not return anything.
+
+// NOTE: DO NOT USE Object.keys, or Object.values in your solution.
+
+
+function iterateOverObject(obj) {
+ for (let key in obj) {
+   console.log(obj[key]);
+ }
+}
+
+let obj = { first: "first",
+            second: "second",
+            third: "third"
+          };
+console.log(iterateOverObject(obj));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
