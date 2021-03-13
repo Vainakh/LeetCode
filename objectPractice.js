@@ -1930,17 +1930,105 @@
 // NOTE: DO NOT USE Object.keys, or Object.values in your solution.
 
 
-function iterateOverObject(obj) {
- for (let key in obj) {
-   console.log(obj[key]);
- }
-}
+// function iterateOverObject(obj) {
+//  for (let key in obj) {
+//    console.log(obj[key]);
+//  }
+// };
 
-let obj = { first: "first",
-            second: "second",
-            third: "third"
-          };
-console.log(iterateOverObject(obj));
+// let obj = { first: "first",
+//             second: "second",
+//             third: "third"
+//           };
+// console.log(iterateOverObject(obj));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Complete a function called countAllCharacters. Given a string, your function returns an object where each key is a character in the given string. The value of each key should be how many times each character appeared in the given string.
+
+// Notes:
+
+// If given an empty string, countAllCharacters should return an empty object.
+// var output = countAllCharacters('banana');
+// console.log(output); // --> {b: 1, a: 3, n: 2}
+
+// function countAllCharacters(str) {
+//   let obj = {};
+//   for (let letter of str) {
+//     if (!obj[letter]) {
+//       obj[letter] = 1;
+//     } else {
+//       obj[letter] += 1;
+//     }
+//   }
+
+//   return obj;
+// };
+
+// let str = "banana";
+// console.log(countAllCharacters(str));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Write a function called transformEmployeeData that transforms some employee data from one format to another.
+
+// The argument will look like this:
+
+// var input = [
+//     [
+//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+//     ],
+//     [
+//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+//     ]
+// ];
+// Given that input, the return value should look like this:
+
+// var result = [
+//     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
+//     {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
+// ]
+// Note that the input may have a different number of rows (more employees) or different keys than the given sample.
+
+
+function transformEmployeeData(array) {
+  let result = [];
+
+  for (let i = 0; i < array.length; i ++) {
+    let personObj = {};
+    for (let j = 0; j < array[i].length; j ++) {
+      personObj[array[i][j][0]] = array[i][j][1];
+    }
+    result.push(personObj); 
+  }
+
+  return result;
+};
+
+var input = [
+      [
+          ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+      ],
+      [
+          ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+      ]
+  ];
+  
+console.log(transformEmployeeData(input))
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
