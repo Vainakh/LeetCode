@@ -1994,33 +1994,65 @@
 // Note that the input may have a different number of rows (more employees) or different keys than the given sample.
 
 
-function transformEmployeeData(array) {
-  let result = [];
+// function transformEmployeeData(array) {
+//   let result = [];
 
-  for (let i = 0; i < array.length; i ++) {
-    let personObj = {};
-    for (let j = 0; j < array[i].length; j ++) {
-      personObj[array[i][j][0]] = array[i][j][1];
-    }
-    result.push(personObj); 
-  }
+//   for (let i = 0; i < array.length; i ++) {
+//     let personObj = {};
+//     for (let j = 0; j < array[i].length; j ++) {
+//       personObj[array[i][j][0]] = array[i][j][1];
+//     }
+//     result.push(personObj); 
+//   }
 
-  return result;
-};
+//   return result;
+// };
 
-var input = [
-      [
-          ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
-      ],
-      [
-          ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
-      ]
-  ];
+// var input = [
+//       [
+//           ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+//       ],
+//       [
+//           ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+//       ]
+//   ];
   
-console.log(transformEmployeeData(input))
+// console.log(transformEmployeeData(input))
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Complete a function called convertObjectToArray which converts an object literal into an array of arrays, like this:
+
+// Argument:
+
+// var input = {
+//   name: 'Holly',
+//   age: 35,
+//   role: 'producer'
+// }
+// Return value:
+
+// var output = [['name', 'Holly'], ['age', 35], ['role', 'producer']]
+// Note that the input may have a different number of properties than the given sample.
+
+
+// function convertObjectToArray(obj) {
+//   let output = [];
+//   for (let key in obj) {
+//     output.push([key, obj[key]])
+//   }
+
+//   return output;
+// };
+
+// var input = {
+//   name: 'Holly',
+//   age: 35,
+//   role: 'producer'
+// };
+
+// console.log(convertObjectToArray(input));
 
 
 
