@@ -35,12 +35,16 @@ const candy = (children) => {
   for (let i = 0; i < children.length; i ++) {
     if (children[i - 1] < children[i] && children[i] > children[i + 1]){
       rating += 2;
-    } else if (children[i - 1] < children[i] && children[i + 1] === 'undefined'){
+    } else if (children[i - 1] < children[i] ||  children[i] > children[i + 1]){
       rating += 2;
-    } else if (children[i - 1] === 'undefined' && children[i] > children[i + 1]){
-
+    } else {
+      rating += 1;
     }
   }
+
+  return rating;
 };
 
-console.log(candy())
+let children = [1,2, 2]
+
+console.log(candy(children));

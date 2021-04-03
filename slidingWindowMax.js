@@ -7,7 +7,7 @@ function printKMax(arr, n, k) {
         return result;
     }
     let temp = [];
-    for (let i = k; i < n; i += 1 ){
+    for (let i = 0; i < n; i += 1 ){
       temp = Math.max(...arr.slice(i, i + k));
       result.push(temp);
     }
