@@ -59,9 +59,92 @@
 
 // The sum of the results for all get queries.
 
-let array = [1, 4, 2, 7, 5];
+// let array = [1, 4, 2, 7, 5];
 
-let sorted1 = array.sort();
-console.log(sorted1);
-let sorted2 = array.sort((a, b) => (a > b ? -1 : 1));
-console.log(sorted2);
+// let sorted1 = array.sort();
+// console.log(sorted1);
+// let sorted2 = array.sort((a, b) => (a > b ? -1 : 1));
+// console.log(sorted2);
+
+// var myObject = {};
+// myObject['paperclip'] = true;
+// console.log(myObject['paperclip']);
+
+// var anObject = {};
+// anObject[0] = 'clothing';
+// anObject[y] = '42';
+// console.log(anObject[0]);
+
+// const fun = (input) => {
+//   console.log(arguments);
+// }
+
+// fun("Adlan");
+
+// const myFunc = function() {
+//   2     return 'Hello World'
+//   3   };
+//   // 4  var helloWorld = myFunc();
+//   // 5  console.log(helloWorld);
+//   6  console.log(myFunc());
+
+// var fun = function(){ return 1 };
+// var res = function(){ return 1 }();
+// console.log(res);
+
+// fun['x'] = 9;
+// fun[0] = 'cat', fun[1] = 'dog';
+// console.log(fun['x']);
+// console.log(fun[0]);
+// for (var k in fun) {
+//   console.log(k);
+// };
+// console.log(fun.length);
+// for (var i = 0; i < fun.length; i ++) {
+//   console.log(i);
+// }
+
+// var fun = function(input) {
+//   let newArray = arguments[0][0];
+//   return newArray;
+// }
+
+// let array = [1, 2, 3];
+
+// console.log(fun(array));
+
+// var myFunc = function() {
+//    return 'Hello World'
+//  };
+// var helloWorld = myFunc();
+// console.log(helloWorld);
+// console.log(myFunc);
+
+// var myFunc = function(arg1) {
+//   var argument2 = arg1;
+//   return argument2;
+// }
+// console.log(myFunc('second argument', 'third argument', 'first argument'));
+
+// var myFunc = function(myStr) {
+//   console.log('lamp shade');
+//   return myStr;
+// }
+
+// setTimeout(myFunc('Hello World'), 1500);
+
+// var myFunc = function(myStr) {
+//   console.log(myStr);
+//   return myStr;
+// }
+
+// setTimeout(myFunc, 1500);
+
+// var myFunc = function(myStr) {
+//   console.log(myStr);
+//   return myStr;
+// }
+
+// setTimeout(function(timeoutArgument) {
+//   myFunc('Hello World')
+// }, 1500);
