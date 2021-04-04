@@ -29,22 +29,41 @@
 //              The third child gets 1 candy because it satisfies the above two conditions.
 
 
-const candy = (children) => {
-  let rating = 0;
+// var candy = function(ratings) {
+//   var candyArr = new Array(ratings.length).fill(1);
+//   for(var i=0;i<ratings.length;i++) {
+//       if (ratings[i+1] > ratings[i]) {
+//           candyArr[i+1] = Math.max(candyArr[i+1], candyArr[i] + 1);
+//       }
+//   }
+//   for(var i=ratings.length-1;i>=0;i--) {
+//       if (ratings[i-1] > ratings[i]) {
+//           candyArr[i-1] = Math.max(candyArr[i-1],candyArr[i] + 1);
+//       }
+//   }
+//   return candyArr.reduce((total, num) => { return total + num});
+// };
 
-  for (let i = 0; i < children.length; i ++) {
-    if (children[i - 1] < children[i] && children[i] > children[i + 1]){
-      rating += 2;
-    } else if (children[i - 1] < children[i] ||  children[i] > children[i + 1]){
-      rating += 2;
-    } else {
-      rating += 1;
+
+
+const candy = (ratings) => {
+  var arrCandy = new Array(ratings.length).fill(1);
+  for (var i = 0; i < ratings.length; i++) {
+    if (ratings[i + 1] > ratings[i]) {
+      arrCandy[i + 1] = Math.max(arrCandy[i + 1], arrCandy[i] + 1);
     }
   }
+  for (var i = ratings.length - 1; i >= 0; i --) {{
+    if (ratings[i - 1] > ratings[i]) {
+    arrCandy[i - 1] = Math.max(arrCandy[i - 1], arrCandy[i] - 1);
+    }
 
-  return rating;
+    return arrCandy.reduce((acc, el) => {
+      return acc + el
+    })
+  }};
 };
 
-let children = [1,2, 2]
+let ratings = [1,2,2];
 
-console.log(candy(children));
+console.log(candy(ratings));
