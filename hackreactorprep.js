@@ -16,7 +16,7 @@
 
 
 // Enter your code here
-  
+
 // var myArray = [];
 // let fullName = "Adlan Yandarbiev";
 // let favoriteColor = 'Blue';
@@ -33,7 +33,7 @@
 //   myInfo[keys[i]] = '';
 // };
 
-// var myArray = ["Adlan Yandarbiev", "Blue"]; 
+// var myArray = ["Adlan Yandarbiev", "Blue"];
 // const github = 'https://github.com/Vainakh';
 
 // myInfo = {
@@ -54,7 +54,7 @@
 //   for (let i = 0; i < array.length; i ++) {
 //     if (i === 0) {
 //         newObj[array[i]] = array[array.length - 1];
-//     } 
+//     }
 //   }
 
 //   return newObj;
@@ -186,7 +186,7 @@
 //   for (let key in input) {
 //     newArray.push([key, input[key]]);
 //   }
-  
+
 //   return newArray;
 // }
 
@@ -231,7 +231,7 @@
 //         shortest = arr[i];
 //       }
 //   }
-  
+
 //   return shortest;
 // };
 
@@ -341,7 +341,7 @@
 //   let tax = preTaxAndTipAmount * .095;
 //   let tip = preTaxAndTipAmount * .15;
 //   let total = preTaxAndTipAmount + tax + tip;
-  
+
 //   return total;
 // }
 
@@ -368,7 +368,7 @@
 
 // function getStringLength(string) {
 //   let count = 0;
-//   while (string[count] !== undefined) 
+//   while (string[count] !== undefined)
 //     count ++;
 
 //   return count;
@@ -420,7 +420,7 @@
 //   if (!Array.isArray(obj[key]) || !obj[key] || !obj[key].length) {
 //       return 0;
 //       }
-      
+
 //   var product = 1;
 //   for (var i = 0; i < obj[key].length; i++) {
 //       product *= obj[key][i];
@@ -620,7 +620,7 @@
 //   }
 
 
-//   let longest = arr.filter((el) => typeof el === 'string') 
+//   let longest = arr.filter((el) => typeof el === 'string')
 //   if (longest.length === 0) return '';
 
 //   let word = '';
@@ -632,7 +632,7 @@
 //       continue;
 //     }
 //   }
-  
+
 //   return word;
 // };
 
@@ -657,8 +657,8 @@
 
 // function getLargestNumberAmongMixedElements(arr) {
 //   if (arr.length === 0) return 0;
-  
-//   let numbers = arr.filter((el) => typeof el === 'number') 
+
+//   let numbers = arr.filter((el) => typeof el === 'number')
 //   if (numbers.length === 0) return 0;
 //   return Math.max.apply(null, numbers);
 // }
@@ -687,7 +687,7 @@
 //     sum += i;
 //     i++;
 //   }
-   
+
 //   return sum;
 // };
 
@@ -721,7 +721,7 @@
 //   switch(true) {
 //     case (score > 100):
 //         grade = 'INVALID SCORE';
-//         break; 
+//         break;
 //     case (score < 0):
 //         grade = 'INVALID SCORE';
 //         break;
@@ -794,7 +794,7 @@
 //          break;
 //     case (score > 100 && score < 0):
 //         grade = 'INVALID SCORE';
-//         break; 
+//         break;
 
 //     default:
 //       return 'INVALID SCORE';
@@ -833,7 +833,7 @@
 //     repeated += string;
 //     i++;
 //   }
-   
+
 //   return repeated;
 // };
 
@@ -926,7 +926,7 @@
 
 // Given 2 numbers, "modulo" returns the remainder after dividing num1 by num2.
 
-// It should behave as described in the canonical documentation (MDN) for the JavaScript remainder operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_() 
+// It should behave as described in the canonical documentation (MDN) for the JavaScript remainder operator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
 
 // Notes:
 
@@ -950,7 +950,7 @@
 // };
 
 // let output = modulo(-25, 2);
-// console.log(output); 
+// console.log(output);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -995,7 +995,7 @@
 //   let product = num1;
 //   if (num1 === 0) return 0;
 //   if (num2 === 0) return num2;
-  
+
 //   return num1/(1/num2);
 // }
 
@@ -1169,7 +1169,7 @@
 
 // function greetCustomer(firstName) {
 //   let message;
-  
+
 //   for (let key in customerData) {
 //     for (let value in customerData[key]) {
 //       if (key === firstName && customerData[key][value] === 1) {
@@ -1222,7 +1222,7 @@
 //   }
 // }
 
-// console.log(detectOutlierValue("2 4 7 8 10")); 
+// console.log(detectOutlierValue("2 4 7 8 10"));
 // console.log(detectOutlierValue("1 10 1 1"));
 
 
@@ -1272,7 +1272,7 @@
 //       if (str1 === concated) {
 //         return true;
 //       }
-//     } 
+//     }
 //   }
 
 //   return false;
@@ -1399,7 +1399,7 @@
 
 // Your task is to write a function that will find the longest single-word palindrome within an input phrase (string). The phrase inputted will only contain letters (no symbols, punctuation, or numbers). Your palindrome detection should be case-insensitive. If there are multiple palindromes of equal length, return the last one.
 
-// Ideally, your solution will use a native method (built into the language) called .sort(). Essentially, when called, this method takes a function that tells the sorting operation how it should order the resulting sorted array. We have supplied a function inside of the skeleton. Please consult this MDN documentation, and read it carefully: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
+// Ideally, your solution will use a native method (built into the language) called .sort(). Essentially, when called, this method takes a function that tells the sorting operation how it should order the resulting sorted array. We have supplied a function inside of the skeleton. Please consult this MDN documentation, and read it carefully: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 
 // function findLongestPalindrome(sentence) {
@@ -1486,22 +1486,22 @@
 // Hint: the return value is a string.
 
 // function renderInventory(inventory) {
- 
+
 //   var outPutArray = '';
- 
+
 //   inventory.map(items =>{
 //   for(var i = 0; i < items.shoes.length; i++){
 //     output += items.name + ' ' + items.shoes[i].name + ' ' + items.shoes[i].price + '\n';
 //   }
 //    });
- 
+
 //   return outPutArray;
 // }
 
 // for (let i = 0; i < inventory.length; i ++) {
   //   let shoes = inventory[i].shoes;
   //   for (let j = 0; j < shoes.length; j ++) {
-  //     output += inventory[i].name + ' ' + shoes[j].name + ' ' + shoes[j].price + '\n'; 
+  //     output += inventory[i].name + ' ' + shoes[j].name + ' ' + shoes[j].price + '\n';
   //   }
   // }
 
@@ -1512,7 +1512,7 @@
 //   for (let i = 0; i < inventory.length; i ++) {
 //       let shoes = inventory[i].shoes;
 //       for (let j = 0; j < shoes.length; j ++) {
-//         output += inventory[i].name + ' ' + shoes[j].name + ' ' + shoes[j].price + '\n'; 
+//         output += inventory[i].name + ' ' + shoes[j].name + ' ' + shoes[j].price + '\n';
 //       }
 //     }
 
@@ -1543,7 +1543,7 @@
   // var flatList = "First line\nSecond Line\nThird Line\n";
   // console.log(flatList);
 
-//   let expected  = 'Brunello Cucinelli, tasselled black low-top lace-up, 1000, \nBrunello Cucinelli, tasselled green low-top lace-up, 1100, \nBrunello Cucinelli, plain beige suede moccasin, 950, \nBrunello Cucinelli, plain olive suede moccasin, 1050, \nGucci, red leather laced sneakers, 800, \nGucci, black leather laced sneakers, 900, \n' 
+//   let expected  = 'Brunello Cucinelli, tasselled black low-top lace-up, 1000, \nBrunello Cucinelli, tasselled green low-top lace-up, 1100, \nBrunello Cucinelli, plain beige suede moccasin, 950, \nBrunello Cucinelli, plain olive suede moccasin, 1050, \nGucci, red leather laced sneakers, 800, \nGucci, black leather laced sneakers, 900, \n'
 //   // let to deeply equal 'Brunello Cucinelli, tasselled black low-top lace-up, 1000\nBrunello Cucinelli, tasselled green low-top lace-up, 1100\nBrunello Cucinelli, plain beige suede moccasin, 950\nBrunello Cucinelli, plain olive suede moccasin, 1050\nGucci, red leather laced sneakers, 800\nGucci, black leather laced sneakers, 900\n'
 // console.log(expected);
 
@@ -1605,7 +1605,7 @@
 //     for (var shoe of shoes) {
 //       sum += shoe.price;
 //     }
-  
+
 //     return sum / shoes.length;
 //   }
 
@@ -1785,7 +1785,7 @@
 
 // function generateLaceDetails(inventory) {
 //   let laceDetails = [];
-  
+
 //   //iterate over inventory
 //   for (let i = 0; i < inventory.length; i ++) {
 //     let designerObject = inventory[i];
@@ -1914,13 +1914,13 @@
 
   // Altitude Deltas
   // Please write a function that takes an array of integer altitudes along a hiking trail, as well as two indexes into that array. The two indexes represent the start and end of a segment in the array. We can assume that the array will only contain integers, and that the two indexes will be valid (i.e. they will exist in the input array, and will make sense compared to each other - start is before end).
-  
+
   // Your function should return the "sum of the changes for a walk within that segment" (i.e., beginning at the start index and ending at the end index). Each integer in the array represents another height on the trail, so "walking" will mean accumulating each change in height into a "sum of the changes".
-  
+
   // Note that increases in height count double.
-  
+
   // Here are some examples of your code running, assuming you have successfully created the described function. Please be sure to name the function "sumAltitudeDeltas".
-  
+
 // function sumAltitudeDeltas(height, start, end) {
 //   let sumOfDeltas = 0;
 //   for (let i = 0; i < height.length - 1; i ++) {
@@ -1934,7 +1934,7 @@
 //       } else {
 //         sumOfDeltas += difference;
 //       }
-//     }   
+//     }
 //   }
 
 //   return sumOfDeltas;
@@ -1982,7 +1982,7 @@
 //       return 'Black Win!';
 //     } else if (array[i] === 'red' && array[i + 1] === 'red' && array[i + 2] === 'red' && array[i + 3] === 'red' ) {
 //       return 'Red Win!';
-//     } 
+//     }
 //   }
 
 //   return 'Draw!';
@@ -1996,7 +1996,7 @@
 
 // let draw = checkWinner(['red', 'red', 'red', 'black', 'red', 'black', 0]);
 // console.log(draw); // -> 'Draw!'
- 
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2070,3 +2070,12 @@
 // ];
 
 // console.log(flatListed(currentInventory));
+
+//scope
+
+// A scope is a part of the program
+// where a binding between a variable and value is valid
+
+
+//lexical scope
+
