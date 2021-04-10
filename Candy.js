@@ -47,21 +47,22 @@
 
 
 const candy = (ratings) => {
-  var arrCandy = new Array(ratings.length).fill(1);
-  for (var i = 0; i < ratings.length; i++) {
+
+  let arrCandy = new Array(ratings.length).fill(1);
+
+  for (let i = 0; i < ratings.length; i ++) {
     if (ratings[i + 1] > ratings[i]) {
       arrCandy[i + 1] = Math.max(arrCandy[i + 1], arrCandy[i] + 1);
     }
   }
-  for (var i = ratings.length - 1; i >= 0; i --) {{
-    if (ratings[i - 1] > ratings[i]) {
-    arrCandy[i - 1] = Math.max(arrCandy[i - 1], arrCandy[i] - 1);
-    }
 
-    return arrCandy.reduce((acc, el) => {
-      return acc + el
-    })
-  }};
+  for (let i = ratings.length - 1; i >= 0; i --) {
+    if (ratings[i - 1] > ratings[i]) {
+      arrCandy[i - 1] = Math.max(arrCandy[i - 1], arrCandy[i] - 1);
+    }
+  }
+
+  return arrCandy.reduce((total, num) => {return total + num });
 };
 
 let ratings = [1,2,2];

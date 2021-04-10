@@ -97,11 +97,11 @@ var romanToInt = function(s) {
     M:1000
   };
 
-  let total = 0;
 
-  for (var i = 0; i < s.length; i ++) {
-    if (legend[s[i]] < legend[s[i + 1]]) {
-      total += legend[s[i + 1] - legend[s[i]]];
+  let total = 0;
+  for (let i = 0; i < s.length; i ++) {
+    if (legend[s[i + 1]] > legend[s[i]]) {
+      total += legend[s[i + 1]] - legend[s[i]];
       i ++;
     } else {
       total += legend[s[i]];
@@ -113,6 +113,6 @@ var romanToInt = function(s) {
 
 
 
-var s = "III";
+var s = "IV";
 
 console.log(romanToInt(s));

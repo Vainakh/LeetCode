@@ -1,18 +1,30 @@
 
 function printKMax(arr, n, k) {
+  // let results = [];
+  // let temp = [];
+  // for (let i = -k + 1; i < n; i ++) {
+  //   if (i > 0) {
+  //     temp = Math.max(...arr.slice(i, i + k));
+  //     results.push(temp);
+  //   } else {
+  //     results.push(arr[0]);
+  //   }
+  // }
 
-    const result = [];
+  // return results;
 
-    if (k === 0){
-        return result;
-    }
-    let temp = [];
-    for (let i = 0; i < n; i += 1 ){
+  let results = [];
+  let temp = [];
+  for (let i = -k + 1; i < n; i ++) {
+    if (i > 0) {
       temp = Math.max(...arr.slice(i, i + k));
-      result.push(temp);
+      results.push(temp);
+    } else {
+      results.push(arr[0]);
     }
+  }
 
-    return result;
+  return results;
 };
 
 let arr = [5, 2, 3, 7, 4]; //[5, 5, 5, 7, 7, 7, 4]
