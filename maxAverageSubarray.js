@@ -31,39 +31,58 @@
 // 1 <= k <= n <= 105
 // -104 <= nums[i] <= 104
 
+// const maxSubarray = (nums, k) => {
+//   let n = nums.length;
+
+//   // Check if 'k' is valid
+//   if (k > n) return -1;
+
+//   // Create and fill array
+//     // to store cumulative
+//     // sum. csum[i] stores
+//     // sum of arr[0] to arr[i]
+//   let newArray = new Array(nums.length);
+//   newArray[0] = nums[0];
+
+//   for(let i = 1; i < nums.length; i++) {
+//     newArray[i] = newArray[i - 1] + nums[i];
+//   }
+
+//   // Initialize max_sm as
+//     // sum of first subarray
+//   let maxSum = newArray[k - 1];
+//   // Find sum of other
+//   // subarrays and update
+//   // max_sum if required.
+//   for(let i = k; i < nums.length; i++) {
+//     let currSum = newArray[i] - newArray[i - k];
+//     if (currSum > maxSum) {
+//         maxSum = currSum;
+//     }
+//   }
+//   return maxSum / k;
+// };
+
 const maxSubarray = (nums, k) => {
-  let n = nums.length;
+  if (k > nums.length) return -1;
 
-  // Check if 'k' is valid
-  if (k > n) return -1;
+  let sum = nums[0];
 
-  // Create and fill array
-    // to store cumulative
-    // sum. csum[i] stores
-    // sum of arr[0] to arr[i]
-  let newArray = new Array(n);
-  newArray[0] = nums[0];
-
-  for(let i = 1; i < n; i++) {
-    newArray[i] = newArray[i - 1] + nums[i];
-    console.log(newArray[i])
+  for (let i = 1; i < k; i++) {
+    sum += nums[i];
   }
 
-  // Initialize max_sm as
-    // sum of first subarray
-  let maxSum = newArray[k - 1];
-  console.log({maxSum})
-  // Find sum of other
-  // subarrays and update
-  // max_sum if required.
-  for(let i = k; i < n; i++) {
-    let currSum = newArray[i] - newArray[i - k];
-    if (currSum > maxSum) {
-        maxSum = currSum;
+  let maxSum = sum;
+
+  for (let i = k; i < nums.length; i++) {
+    sum = sum + nums[i] - nums[i - k];
+    if (sum > maxSum) {
+      maxSum = sum;
     }
   }
+
   return maxSum / k;
-};
+}
 
 let nums = [1,12,-5,-6,50,3];
 let k = 4;
