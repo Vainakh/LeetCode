@@ -46,25 +46,53 @@
 
 
 
+// const candy = (ratings) => {
+
+//   let arrCandy = new Array(ratings.length).fill(1);
+
+//   for (let i = 0; i < ratings.length; i ++) {
+//     if (ratings[i + 1] > ratings[i]) {
+//       arrCandy[i + 1] = Math.max(arrCandy[i + 1], arrCandy[i] + 1);
+//     }
+//   }
+
+//   for (let i = ratings.length - 1; i >= 0; i --) {
+//     if (ratings[i - 1] > ratings[i]) {
+//       arrCandy[i - 1] = Math.max(arrCandy[i - 1], arrCandy[i] - 1);
+//     }
+//   }
+
+//   return arrCandy.reduce((total, num) => {return total + num });
+// };
+
+// let ratings = [1,2,2];
+
+
+
 const candy = (ratings) => {
+    let n = ratings.length,
+    leftArr = new Array(n).fill(1),
+    rightArr = new Array(n).fill(1),
+    candyCount = 0;
 
-  let arrCandy = new Array(ratings.length).fill(1);
-
-  for (let i = 0; i < ratings.length; i ++) {
-    if (ratings[i + 1] > ratings[i]) {
-      arrCandy[i + 1] = Math.max(arrCandy[i + 1], arrCandy[i] + 1);
+    for (let i = 1; i < n; i++) {
+      if (ratings[i] > ratings[i - 1]) {
+        leftArr[i] = leftArr[i - 1] + 1;
+      }
     }
-  }
 
-  for (let i = ratings.length - 1; i >= 0; i --) {
-    if (ratings[i - 1] > ratings[i]) {
-      arrCandy[i - 1] = Math.max(arrCandy[i - 1], arrCandy[i] - 1);
+    for (let i = n - 2; i >= 0; i--) {
+      if (ratings[i] > ratings[i + 1]) {
+        rightArr[i] = rightArr[i + 1] + 1;
+      }
     }
-  }
 
-  return arrCandy.reduce((total, num) => {return total + num });
+    for (let i = 0; i < n; i++) {
+      candyCount += Math.max(leftArr[i], rightArr[i]);
+    }
+  return candyCount;
 };
 
-let ratings = [1,2,2];
+  let ratings = [1,0,2];
 
 console.log(candy(ratings));
