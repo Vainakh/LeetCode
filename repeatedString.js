@@ -2,11 +2,13 @@
 
 // Given an integer, , find and print the number of letter a's in the first  letters of Lilah's infinite string.
 
-// For example, if the string  and , the substring we consider is , the first  characters of her infinite string. There are  occurrences of a in the substring.
+// For example, if the string  and , the substring we consider is , the first  characters of her infinite string.
+//There are  occurrences of a in the substring.
 
 // Function Description
 
-// Complete the repeatedString function in the editor below. It should return an integer representing the number of occurrences of a in the prefix of length  in the infinitely repeating string.
+// Complete the repeatedString function in the editor below. It should return an integer representing the number of occurrences of
+//a in the prefix of length  in the infinitely repeating string.
 
 // repeatedString has the following parameter(s):
 
@@ -46,19 +48,17 @@
 
 
 const repeatedString = (s, n) => {
-    let lengthNlength = s.repeat(n);
-    let lengthN = lengthNlength.slice(0, n);
-    
-    let letters = Array.from(lengthN);
-    let count = 0;
-    
-    for (let i = 0; i < letters.length; i++) {
-        let char = letters[i];
-        if (char === 'a') {
-            count++;
-        }
+  let lengthNlength = s.repeat(n);
+  let lengthN = lengthNlength.slice(0, n);
+  let letters = Array.from(lengthN);
+  let count = 0;
+
+  for (let letter of letters) {
+    if (letter === 'a') {
+      count ++;
     }
-    return count;
+  }
+  return count;
 }
 
 
