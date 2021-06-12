@@ -14,10 +14,30 @@
 //     if (!key in second) {
 //       return false;
 //     }
-//     if(string1[key] !== string2[key]) {
-//       return false;
-//     }
+//     // if(string1[key] !== string2[key]) {
+//     //   return false;
+//     // }
 //   }
+//   return true;
+// }
+
+// const validAnagram = (string1, string2) => {
+//   let first = {};
+//   let second = {};
+
+//   if (string1.length !== string2.length) return false;
+//   for (let i = 0; i < string1.length; i ++) {
+//     first[string1[i]] = (first[string1[i]] || 0) + 1;
+//   }
+//   for (let j = 0; j < string2.length; j ++) {
+//     second[string2[j]] = (second[string2[j]] || 0) + 1;
+//   }
+
+//   for (let key in string1) {
+//     if (!key in second) return false;
+//     if (string1[key] !== string2[key]) return false;
+//   }
+
 //   return true;
 // }
 
@@ -30,9 +50,10 @@ const validAnagram = (string1, string2) => {
   for (let j = 0; j < string2.length; j++) {
     if (!lookup[string2[j]]) {
       return false;
-    } else {
-      lookup[string2[j]] -= 1;
-    } 
+    }
+    // else {
+    //   lookup[string2[j]] -= 1;
+    // }
   }
   console.log(lookup);
   return true;
