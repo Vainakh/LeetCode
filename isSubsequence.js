@@ -1,28 +1,42 @@
 
-// is string1 subsequence of string 2. 
+// is string1 subsequence of string 2.
 
-const isSubsequence = (array, sequence) => {
-  if (string1.length === 0) {
-    return true;
-  }
+// const isSubsequence = (array, sequence) => {
+//   if (string1.length === 0) {
+//     return true;
+//   }
 
+//   let first = 0;
+//   let second = 0;
+
+//   while (second < string2.length) {
+//     if (string2.charAt(second) === string1.charAt(first)) {
+//       first++;
+//       if (first === string1.length) return true;
+//     }
+//     second++;
+//   }
+//   return false;
+// }
+
+const isSubsequence = (string, subsequence) => {
+  if (string.length === 0) return true;
   let first = 0;
   let second = 0;
-
-  while (second < string2.length) { 
-    if (string2.charAt(second) === string1.charAt(first)) {
+  while (second < subsequence.length) {
+    if (subsequence.charAt(second) === string.charAt(first)) {
       first++;
-      if (first === string1.length) return true;
+      if(first === string.length) return true;
     }
     second++;
   }
   return false;
 }
 
-// let string1 = "hello";
-// let string2 = "hello world";
+let string1 = "hello";
+let string2 = "hello world";
 
-let string1 = "sing";
-let string2 = "sting";
+// let string1 = "sing";
+// let string2 = "sting";
 
 console.log(isSubsequence(string1, string2));

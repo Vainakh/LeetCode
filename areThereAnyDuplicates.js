@@ -2,15 +2,15 @@
 // T O(0);
 
 // frequency counter solution
-const anyDuplicates = (...arg) => {
-    let counter = {};
+// const anyDuplicates = (...arg) => {
+//     let counter = {};
 
-    for (let i = 0; i < arg.length; i++) {
-      counter[arg[i]] = (counter[arg[i]] || 0) + 1;
-    }
+//     for (let i = 0; i < arg.length; i++) {
+//       counter[arg[i]] = (counter[arg[i]] || 0) + 1;
+//     }
 
-    return Object.values(counter).every(el => el < 2) ? false : true; 
-};
+//     return Object.values(counter).every(el => el < 2) ? false : true;
+// };
 
 //function areThereDuplicates(...args) {
   // Two pointers
@@ -27,14 +27,27 @@ const anyDuplicates = (...arg) => {
 //   return false
 // }
 
-// areThereDuplicates One Liner Solution
-// function areThereDuplicates() {
-//   return new Set(arguments).size !== arguments.length;
-// }
+//one linear solution
 
-console.log(anyDuplicates(1, 2, 3))//false;
-console.log(anyDuplicates(1, 2, 2))//true;
-console.log(anyDuplicates("a", "b", "c", "a"))//true;
+//areThereDuplicates
+const areThereDuplicates = (...arg) => {
+  let counter = {};
+
+  for (let i = 0; i < arg.length; i++) {
+    if(!counter[arg[i]]) {
+      counter[arg[i]] = (counter[arg[i]] || 0) + 1;
+    }
+  }
+
+  return Object.values(counter).every(el => el < 2);
+}
+
+
+
+// console.log(areThereDuplicates(1, 2, 3))//false;
+console.log(areThereDuplicates(1, 2, 2))//true;
+// console.log(areThereDuplicates("a", "b", "c", "a"))//true;
+// console.log(areThereDuplicates("hello"))
 
 
 

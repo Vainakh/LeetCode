@@ -33,25 +33,38 @@
 //   console.log(count);
 // };
 
+// const countUniqueValues = (array) => {
+//   let unique = {};
+//   let count = 0;
+//   for (let i = 0; i < array.length; i ++) {
+//     if (!unique[array[i]]) {
+//       unique[array[i]] = true;
+//     }
+//   }
+
+//   for (let num in unique) {
+//     count ++;
+//   }
+
+//   return count;
+// };
+
 const countUniqueValues = (array) => {
-  let unique = {};
   let count = 0;
-  for (let i = 0; i < array.length; i ++) {
-    if (!unique[array[i]]) {
-      unique[array[i]] = true;
+  i = 0;
+  for (let j = 1; j <= array.length; j ++) {
+    if (array[i] !== array[j]) {
+      i++;
+      array[i] = array[j];
+      count++;
     }
   }
-
-  for (let num in unique) {
-    count ++;
-  }
-
   return count;
 };
 
 // let array = [1, 1, 1, 1, 1, 2];//2
-// let array = [1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13];//7
+let array = [1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13];//7
 // let array = [];//0
-let array = [-2, -1, -1, 0, 1];//4
+// let array = [-2, -1, -1, 0, 1];//4
 
 console.log(countUniqueValues(array))

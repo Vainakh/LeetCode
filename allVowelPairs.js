@@ -7,15 +7,33 @@
 // # all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])   # => ["action europe", "tear impromptu"]
 
 
+// const allVowelPairs = (words) => {
+//   let vowels = "aeoui".split("");
+//   let pairs = [];
+
+//   for (let i = 0; i < words.length; i ++) {
+//     for (let j = i + 1; j < words.length; j ++) {
+//       let currentPair = words[i] + " " + words[j];
+//       let combined = vowels.every(letter => currentPair.includes(letter));
+//       if(combined){
+//         pairs.push(currentPair);
+//       }
+//     }
+//   }
+//   return pairs;
+// };
+
+
+
 const allVowelPairs = (words) => {
-  let vowels = "aeoui".split(""); 
+  let vowels = 'aeoui'.split('');
   let pairs = [];
 
   for (let i = 0; i < words.length; i ++) {
     for (let j = i + 1; j < words.length; j ++) {
-      let currentPair = words[i] + " " + words[j]; 
+      let currentPair = words[i] + ' ' + words[j];
       let combined = vowels.every(letter => currentPair.includes(letter));
-      if(combined){
+      if (combined) {
         pairs.push(currentPair);
       }
     }
